@@ -1,10 +1,11 @@
 # Table of Contents
-- [Introduction](./index.html)
-- [Benchmarks](./benchmarks.html)
-- [Sysbench Analysis](./sysbench_analysis.html)
-- [Multiload Analysis](./multiload_analysis.html)
-- [Fleetbench Analysis](./fleetbench_analysis.html)
-- [Conclusions](./conclusions.html)
+1. [Introduction](./index.html)
+2. [Benchmarks](./benchmarks.html)
+3. [Analysis](./sysbench_analysis.html)
+    1. [Sysbench Analysis](./sysbench_analysis.html)
+    2. [Multiload Analysis](./multiload_analysis.html)
+    3. [Fleetbench Analysis](./fleetbench_analysis.html)
+4. [Conclusions](./conclusions.html)
 
 # 1. Introduction
 
