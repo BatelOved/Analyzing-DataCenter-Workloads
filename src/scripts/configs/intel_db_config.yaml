@@ -1,0 +1,27 @@
+#################################
+# Database Configurations
+#################################
+intel_db_32_vcpu: &intel_db_32_vcpu
+    AWS:
+        machine_type: db.m5.8xlarge
+        zone: us-west-1b
+
+intel_db_16_vcpu: &intel_db_16_vcpu
+    AWS:
+        machine_type: db.m5.4xlarge
+        zone: us-west-1b
+
+intel_db_8_vcpu: &intel_db_8_vcpu
+    AWS:
+        machine_type: db.m5.2xlarge
+        zone: us-west-1b
+
+intel_db_4_vcpu: &intel_db_4_vcpu
+    AWS:
+        machine_type: db.m5.xlarge
+        zone: us-west-1b
+
+intel_db_2_vcpu: &intel_db_2_vcpu
+    AWS:
+        machine_type: db.m5.large
+        zone: us-west-1b

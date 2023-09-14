@@ -1,0 +1,27 @@
+#################################
+# Database Configurations
+#################################
+arm_db_32_vcpu: &arm_db_32_vcpu
+    AWS:
+        machine_type: db.m6g.8xlarge
+        zone: us-west-1b
+
+arm_db_16_vcpu: &arm_db_16_vcpu
+    AWS:
+        machine_type: db.m6g.4xlarge
+        zone: us-west-1b
+
+arm_db_8_vcpu: &arm_db_8_vcpu
+    AWS:
+        machine_type: db.m6g.2xlarge
+        zone: us-west-1b
+
+arm_db_4_vcpu: &arm_db_4_vcpu
+    AWS:
+        machine_type: db.m6g.xlarge
+        zone: us-west-1b
+
+arm_db_2_vcpu: &arm_db_2_vcpu
+    AWS:
+        machine_type: db.m6g.large
+        zone: us-west-1b

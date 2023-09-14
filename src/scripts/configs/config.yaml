@@ -1,0 +1,6 @@
+#import src/scripts/configs/benchmarks/sysbench_config.yaml
+
+#################################
+# Benchmark Runs
+#################################
+benchmarks: *intel_db_sysbench

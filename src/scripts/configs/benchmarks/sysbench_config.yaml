@@ -1,0 +1,57 @@
+#import src/scripts/configs/intel_db_config.yaml
+#import src/scripts/configs/arm_db_config.yaml
+#import src/scripts/configs/intel_client_config.yaml
+#import src/scripts/configs/disk_config.yaml
+
+##################################################################
+# Benchmark Flags
+##################################################################
+sysbench_flags: &sysbench_flags
+    sysbench_run_threads: 1,2,4,8,16,32,64,128,256,512
+
+default_vm_groups: &default_vm_groups
+    clients:
+        vm_spec: *intel_client_32_vcpu
+        disk_spec: *default_300_gb
+
+intel_db_sysbench: &intel_db_sysbench
+    - sysbench:
+        relational_db: {engine: mysql, engine_version: 8.0.32, db_spec: *intel_db_2_vcpu, db_disk_spec: *default_500_gb, vm_groups: *default_vm_groups}
+        flags: *sysbench_flags
+
+    # - sysbench:
+    #     relational_db: {engine: mysql, engine_version: 8.0.32, db_spec: *intel_db_4_vcpu, db_disk_spec: *default_500_gb, vm_groups: *default_vm_groups}
+    #     flags: *sysbench_flags
+
+    # - sysbench:
+    #     relational_db: {engine: mysql, engine_version: 8.0.32, db_spec: *intel_db_8_vcpu, db_disk_spec: *default_500_gb, vm_groups: *default_vm_groups}
+    #     flags: *sysbench_flags
+
+    # - sysbench:
+    #     relational_db: {engine: mysql, engine_version: 8.0.32, db_spec: *intel_db_16_vcpu, db_disk_spec: *default_500_gb, vm_groups: *default_vm_groups}
+    #     flags: *sysbench_flags
+
+    # - sysbench:
+    #     relational_db: {engine: mysql, engine_version: 8.0.32, db_spec: *intel_db_32_vcpu, db_disk_spec: *default_500_gb, vm_groups: *default_vm_groups}
+    #     flags: *sysbench_flags
+
+arm_db_sysbench: &arm_db_sysbench
+    - sysbench:
+        relational_db: {engine: mysql, engine_version: 8.0.32, db_spec: *arm_db_2_vcpu, db_disk_spec: *default_500_gb, vm_groups: *default_vm_groups}
+        flags: *sysbench_flags
+
+    # - sysbench:
+    #     relational_db: {engine: mysql, engine_version: 8.0.32, db_spec: *arm_db_4_vcpu, db_disk_spec: *default_500_gb, vm_groups: *default_vm_groups}
+    #     flags: *sysbench_flags
+
+    # - sysbench:
+    #     relational_db: {engine: mysql, engine_version: 8.0.32, db_spec: *arm_db_8_vcpu, db_disk_spec: *default_500_gb, vm_groups: *default_vm_groups}
+    #     flags: *sysbench_flags
+
+    # - sysbench:
+    #     relational_db: {engine: mysql, engine_version: 8.0.32, db_spec: *arm_db_16_vcpu, db_disk_spec: *default_500_gb, vm_groups: *default_vm_groups}
+    #     flags: *sysbench_flags
+
+    # - sysbench:
+    #     relational_db: {engine: mysql, engine_version: 8.0.32, db_spec: *arm_db_32_vcpu, db_disk_spec: *default_500_gb, vm_groups: *default_vm_groups}
+    #     flags: *sysbench_flags

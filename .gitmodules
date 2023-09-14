@@ -1,0 +1,9 @@
+[submodule "PerfKitBenchmarker"]
+	path = PerfKitBenchmarker
+	url = https://github.com/GoogleCloudPlatform/PerfKitBenchmarker
+[submodule "multichase"]
+	path = multichase
+	url = https://github.com/google/multichase
+[submodule "fleetbench"]
+	path = fleetbench
+	url = https://github.com/google/fleetbench

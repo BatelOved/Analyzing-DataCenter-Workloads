@@ -1,0 +1,12 @@
+#################################
+# Disk Configurations
+#################################
+my_db_disk_spec: &default_500_gb
+    AWS:
+        disk_size: 500
+        disk_type: gp2
+
+my_disk_spec: &default_300_gb
+    AWS:
+        disk_size: 300
+        disk_type: gp2

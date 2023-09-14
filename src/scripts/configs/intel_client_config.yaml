@@ -1,0 +1,27 @@
+#################################
+# Client Machine Configurations
+#################################
+intel_client_32_vcpu: &intel_client_32_vcpu
+    AWS:
+        machine_type: m5.8xlarge
+        zone: us-west-1b
+
+intel_client_16_vcpu: &intel_client_16_vcpu
+    AWS:
+        machine_type: m5.4xlarge
+        zone: us-west-1b
+
+intel_client_8_vcpu: &intel_client_8_vcpu
+    AWS:
+        machine_type: m5.2xlarge
+        zone: us-west-1b
+
+intel_client_4_vcpu: &intel_client_4_vcpu
+    AWS:
+        machine_type: m5.xlarge
+        zone: us-west-1b
+
+intel_client_2_vcpu: &intel_client_2_vcpu
+    AWS:
+        machine_type: m5.large
+        zone: us-west-1b
