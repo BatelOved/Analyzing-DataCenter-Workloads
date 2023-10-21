@@ -12,10 +12,10 @@
 
 `TODO` - In the experimant there are multiple of factors that can influence the results, therefore this is how we took care of that:
 - `Database Machine Type:` The Intel and ARM families of processors are very close to having the same parameters, +names+parameters.
-- `Networking:` In order to avoide variatios caused by network between multiple different clients and servers from different architectures we chose to have the clients and the database machines at the same AWS region, and specifically also at the same availability zone.
+- `Networking:` In order to avoide variations caused by network between multiple different clients and servers from different architectures we chose to have the clients and the database machines at the same AWS region, and specifically also at the same availability zone.
 - `Client Machine Type:`In the experiment we are interested in the DB machine preformance, therefore the client is a strong 32 vCPU client, tentitively chosen to be of Intel architecture, but need to also check with ARM 32 vCPU client machine for both as well.
 - `Disk Size:` Both the DB and client disk size where tentatively chosen and are constant at all time. But worth checking the influence of that parameter as well.
-- `Iterations:` We would much prefer to have larger number of iterations to conclued from but the scope of the experiment is limited and takes long time to produce the results currently.
+- `Iterations:` We would much rather to have larger number of iterations to conclued from but the scope of the experiment is limited and takes long time to produce the results currently.
 
 #### AWS Configurations -
 

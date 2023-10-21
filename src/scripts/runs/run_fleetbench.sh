@@ -5,25 +5,33 @@ cd "$HOME/Analyzing-DataCenter-Workloads/fleetbench"
 PROG="bazel"
 
 # Array of arguments to pass
-ARGS=()
+PROG_ARGS=(run --config=clang --config=opt)
 
-ARGS+=(run --config=clang --config=opt)
-ARGS+=(fleetbench/swissmap:hot_swissmap_benchmark)
-#ARGS+=(fleetbench/swissmap:cold_swissmap_benchmark)
-#ARGS+=(fleetbench/proto:proto_benchmark)
-#ARGS+=(fleetbench/tcmalloc:empirical_driver)
-#ARGS+=(fleetbench/compression:compression_benchmark)
-#ARGS+=(fleetbench/hashing:hashing_benchmark)
-#ARGS+=(fleetbench/libc:mem_benchmark)
-ARGS+=(--)
+TESTS=()
+TESTS+=(fleetbench/swissmap:hot_swissmap_benchmark)
+TESTS+=(fleetbench/swissmap:cold_swissmap_benchmark)
+TESTS+=(fleetbench/proto:proto_benchmark)
+TESTS+=(fleetbench/tcmalloc:empirical_driver)
+TESTS+=(fleetbench/compression:compression_benchmark)
+TESTS+=(fleetbench/hashing:hashing_benchmark)
+TESTS+=(fleetbench/libc:mem_benchmark)
 
-#ARGS+=(--benchmark_list_tests=true)
-ARGS+=(--benchmark_repetitions=5)
-ARGS+=(--benchmark_min_time=30s)
-ARGS+=(--benchmark_format=console)
-ARGS+=(--benchmark_counters_tabular=true)
+BENCHMARK_ARGS=()
+BENCHMARK_ARGS+=(--)
+BENCHMARK_ARGS+=(--benchmark_repetitions=5)
+BENCHMARK_ARGS+=(--benchmark_min_time=30s)
+BENCHMARK_ARGS+=(--benchmark_format=csv)
+BENCHMARK_ARGS+=(--benchmark_counters_tabular=true)
 
-"${PROG}" "${ARGS[@]}"
+
+for test in ${TESTS[@]}; do
+    echo "Test: $test"
+    echo ""
+
+    "${PROG}" "${PROG_ARGS[@]}" "$test" "${BENCHMARK_ARGS[@]}"
+    echo "============================================================================================================="
+done
+
 
 cd "$HOME/Analyzing-DataCenter-Workloads"
 
