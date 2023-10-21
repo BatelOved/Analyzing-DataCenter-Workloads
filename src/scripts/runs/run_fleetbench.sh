@@ -8,11 +8,11 @@ PROG="bazel"
 PROG_ARGS=(run --config=clang --config=opt)
 
 TESTS=()
+# TESTS+=(fleetbench/compression:compression_benchmark)
 TESTS+=(fleetbench/swissmap:hot_swissmap_benchmark)
 TESTS+=(fleetbench/swissmap:cold_swissmap_benchmark)
 TESTS+=(fleetbench/proto:proto_benchmark)
 TESTS+=(fleetbench/tcmalloc:empirical_driver)
-TESTS+=(fleetbench/compression:compression_benchmark)
 TESTS+=(fleetbench/hashing:hashing_benchmark)
 TESTS+=(fleetbench/libc:mem_benchmark)
 
@@ -20,18 +20,20 @@ BENCHMARK_ARGS=()
 BENCHMARK_ARGS+=(--)
 BENCHMARK_ARGS+=(--benchmark_repetitions=5)
 BENCHMARK_ARGS+=(--benchmark_min_time=30s)
-BENCHMARK_ARGS+=(--benchmark_format=csv)
+BENCHMARK_ARGS+=(--benchmark_format=console)
+BENCHMARK_ARGS+=(--benchmark_out_format=csv)
 BENCHMARK_ARGS+=(--benchmark_counters_tabular=true)
-
+# BENCHMARK_ARGS+=(--benchmark_list_tests=true)
+# BENCHMARK_ARGS+=(--benchmark_filter="all")
 
 for test in ${TESTS[@]}; do
     echo "Test: $test"
     echo ""
 
+    BENCHMARK_ARGS+=(--benchmark_out="$SRC/results/$test.csv")
     "${PROG}" "${PROG_ARGS[@]}" "$test" "${BENCHMARK_ARGS[@]}"
     echo "============================================================================================================="
 done
-
 
 cd "$HOME/Analyzing-DataCenter-Workloads"
 

@@ -1,0 +1,19 @@
+2023-10-21T17:44:22+00:00
+Running /home/ubuntu/.cache/bazel/_bazel_ubuntu/4c29c784cc3db22f3c97f81d231b656c/execroot/com_google_fleetbench/bazel-out/k8-opt-clang/bin/fleetbench/swissmap/hot_swissmap_benchmark.runfiles/com_google_fleetbench/fleetbench/swissmap/hot_swissmap_benchmark
+Run on (32 X 3097.58 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x16)
+  L1 Instruction 32 KiB (x16)
+  L2 Unified 1024 KiB (x16)
+  L3 Unified 36608 KiB (x1)
+Load Average: 0.07, 1.00, 1.01
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
+"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0",1006694400,4.58568,4.5856,ns,,,,,
+"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0",1006694400,4.58614,4.58608,ns,,,,,
+"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0",1006694400,4.58429,4.58424,ns,,,,,
+"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0",1006694400,4.5846,4.5845,ns,,,,,
+"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0",1006694400,4.58473,4.58462,ns,,,,,
+"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0_mean",5,4.58509,4.58501,ns,,,,,
+"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0_median",5,4.58473,4.58462,ns,,,,,
+"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0_stddev",5,0.000784375,0.000788164,ns,,,,,
+"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0_cv",5,34214.2,34380,ns,,,,,

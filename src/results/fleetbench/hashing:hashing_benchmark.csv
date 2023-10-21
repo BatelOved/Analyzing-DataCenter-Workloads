@@ -1,0 +1,64 @@
+2023-10-21T17:56:15+00:00
+Running /home/ubuntu/.cache/bazel/_bazel_ubuntu/4c29c784cc3db22f3c97f81d231b656c/execroot/com_google_fleetbench/bazel-out/k8-opt-clang/bin/fleetbench/hashing/hashing_benchmark.runfiles/com_google_fleetbench/fleetbench/hashing/hashing_benchmark
+Run on (32 X 3101.36 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x16)
+  L1 Instruction 32 KiB (x16)
+  L2 Unified 1024 KiB (x16)
+  L3 Unified 36608 KiB (x1)
+Load Average: 1.00, 1.00, 1.00
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message,"bytes_per_cycle"
+"BM_Extendcrc32cinternal_Fleet_hot",44142000,951.463,951.438,ns,3.81718e+09,,,,,1.23081
+"BM_Extendcrc32cinternal_Fleet_hot",44142000,951.399,951.385,ns,3.81739e+09,,,,,1.23088
+"BM_Extendcrc32cinternal_Fleet_hot",44142000,951.405,951.39,ns,3.81737e+09,,,,,1.23087
+"BM_Extendcrc32cinternal_Fleet_hot",44142000,951.394,951.38,ns,3.81742e+09,,,,,1.23089
+"BM_Extendcrc32cinternal_Fleet_hot",44142000,951.384,951.369,ns,3.81746e+09,,,,,1.2309
+"BM_Extendcrc32cinternal_Fleet_hot_mean",5,951.409,951.393,ns,3.81736e+09,,,,,1.23087
+"BM_Extendcrc32cinternal_Fleet_hot_median",5,951.399,951.385,ns,3.81739e+09,,,,,1.23088
+"BM_Extendcrc32cinternal_Fleet_hot_stddev",5,0.0309914,0.0267038,ns,107143,,,,,3.45471e-05
+"BM_Extendcrc32cinternal_Fleet_hot_cv",5,6514.84,5613.62,ns,2.80673e-05,,,,,2.80673e-05
+"BM_Extendcrc32cinternal_Fleet_cold",26375000,1602.85,1602.8,ns,2.26591e+09,,,,,0.730621
+"BM_Extendcrc32cinternal_Fleet_cold",26375000,1615.6,1615.55,ns,2.24803e+09,,,,,0.724854
+"BM_Extendcrc32cinternal_Fleet_cold",26375000,1600.96,1600.92,ns,2.26858e+09,,,,,0.731481
+"BM_Extendcrc32cinternal_Fleet_cold",26375000,1600.44,1600.39,ns,2.26934e+09,,,,,0.731724
+"BM_Extendcrc32cinternal_Fleet_cold",26375000,1613.09,1613.02,ns,2.25156e+09,,,,,0.725991
+"BM_Extendcrc32cinternal_Fleet_cold_mean",5,1606.59,1606.54,ns,2.26068e+09,,,,,0.728934
+"BM_Extendcrc32cinternal_Fleet_cold_median",5,1602.85,1602.8,ns,2.26591e+09,,,,,0.730621
+"BM_Extendcrc32cinternal_Fleet_cold_stddev",5,7.19244,7.18925,ns,1.01e+07,,,,,0.00325666
+"BM_Extendcrc32cinternal_Fleet_cold_cv",5,895367,895000,ns,0.0044677,,,,,0.0044677
+"BM_Computecrc32c_Fleet_hot",1000000000,18.2422,18.2419,ns,7.2065e+08,,,,,0.232366
+"BM_Computecrc32c_Fleet_hot",1000000000,18.2423,18.242,ns,7.20646e+08,,,,,0.232365
+"BM_Computecrc32c_Fleet_hot",1000000000,18.2428,18.2425,ns,7.20623e+08,,,,,0.232358
+"BM_Computecrc32c_Fleet_hot",1000000000,18.2424,18.2421,ns,7.20641e+08,,,,,0.232363
+"BM_Computecrc32c_Fleet_hot",1000000000,18.2429,18.2426,ns,7.20621e+08,,,,,0.232357
+"BM_Computecrc32c_Fleet_hot_mean",5,18.2425,18.2422,ns,7.20636e+08,,,,,0.232362
+"BM_Computecrc32c_Fleet_hot_median",5,18.2424,18.2421,ns,7.20641e+08,,,,,0.232363
+"BM_Computecrc32c_Fleet_hot_stddev",5,0.000298737,0.000338165,ns,13358.7,,,,,4.30739e-06
+"BM_Computecrc32c_Fleet_hot_cv",5,3275.17,3707.5,ns,1.85374e-05,,,,,1.85374e-05
+"BM_Computecrc32c_Fleet_cold",1000000000,36.7874,36.7866,ns,3.57359e+08,,,,,0.115227
+"BM_Computecrc32c_Fleet_cold",1000000000,36.7868,36.7859,ns,3.57365e+08,,,,,0.115229
+"BM_Computecrc32c_Fleet_cold",1000000000,36.7866,36.7857,ns,3.57367e+08,,,,,0.115229
+"BM_Computecrc32c_Fleet_cold",1000000000,36.7916,36.7907,ns,3.57319e+08,,,,,0.115214
+"BM_Computecrc32c_Fleet_cold",1000000000,36.7865,36.7853,ns,3.57371e+08,,,,,0.115231
+"BM_Computecrc32c_Fleet_cold_mean",5,36.7878,36.7868,ns,3.57356e+08,,,,,0.115226
+"BM_Computecrc32c_Fleet_cold_median",5,36.7868,36.7859,ns,3.57365e+08,,,,,0.115229
+"BM_Computecrc32c_Fleet_cold_stddev",5,0.00216523,0.00218506,ns,21224.7,,,,,6.84369e-06
+"BM_Computecrc32c_Fleet_cold_cv",5,11771.5,11879.6,ns,5.93937e-05,,,,,5.93937e-05
+"BM_Combine_contiguous_Fleet_hot",1000000000,5.49547,5.49536,ns,2.91446e+09,,,,,0.939736
+"BM_Combine_contiguous_Fleet_hot",1000000000,5.49686,5.49673,ns,2.91373e+09,,,,,0.939503
+"BM_Combine_contiguous_Fleet_hot",1000000000,5.49898,5.49888,ns,2.91259e+09,,,,,0.939136
+"BM_Combine_contiguous_Fleet_hot",1000000000,5.48931,5.48919,ns,2.91774e+09,,,,,0.940794
+"BM_Combine_contiguous_Fleet_hot",1000000000,5.48545,5.48522,ns,2.91985e+09,,,,,0.941475
+"BM_Combine_contiguous_Fleet_hot_mean",5,5.49321,5.49308,ns,2.91567e+09,,,,,0.940129
+"BM_Combine_contiguous_Fleet_hot_median",5,5.49547,5.49536,ns,2.91446e+09,,,,,0.939736
+"BM_Combine_contiguous_Fleet_hot_stddev",5,0.00563815,0.0056814,ns,3.01686e+06,,,,,0.000972756
+"BM_Combine_contiguous_Fleet_hot_cv",5,205277,206857,ns,0.0010347,,,,,0.0010347
+"BM_Combine_contiguous_Fleet_cold",1000000000,15.23,15.2296,ns,1.05163e+09,,,,,0.339089
+"BM_Combine_contiguous_Fleet_cold",1000000000,15.2308,15.2304,ns,1.05158e+09,,,,,0.339072
+"BM_Combine_contiguous_Fleet_cold",1000000000,15.2298,15.2293,ns,1.05165e+09,,,,,0.339095
+"BM_Combine_contiguous_Fleet_cold",1000000000,15.2397,15.2391,ns,1.05098e+09,,,,,0.338878
+"BM_Combine_contiguous_Fleet_cold",1000000000,15.238,15.2375,ns,1.05109e+09,,,,,0.338913
+"BM_Combine_contiguous_Fleet_cold_mean",5,15.2336,15.2332,ns,1.05139e+09,,,,,0.339009
+"BM_Combine_contiguous_Fleet_cold_median",5,15.2308,15.2304,ns,1.05158e+09,,,,,0.339072
+"BM_Combine_contiguous_Fleet_cold_stddev",5,0.00478048,0.00472799,ns,326284,,,,,0.000105207
+"BM_Combine_contiguous_Fleet_cold_cv",5,62762.2,62074.8,ns,0.000310337,,,,,0.000310337

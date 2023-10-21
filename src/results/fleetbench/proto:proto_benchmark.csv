@@ -1,0 +1,19 @@
+2023-10-21T17:48:45+00:00
+Running /home/ubuntu/.cache/bazel/_bazel_ubuntu/4c29c784cc3db22f3c97f81d231b656c/execroot/com_google_fleetbench/bazel-out/k8-opt-clang/bin/fleetbench/proto/proto_benchmark.runfiles/com_google_fleetbench/fleetbench/proto/proto_benchmark
+Run on (32 X 3105.6 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x16)
+  L1 Instruction 32 KiB (x16)
+  L2 Unified 1024 KiB (x16)
+  L3 Unified 36608 KiB (x1)
+Load Average: 0.99, 1.00, 1.00
+name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message
+"BM_Protogen_Arena",2361,1.77395e+07,1.7739e+07,ns,,,,,
+"BM_Protogen_Arena",2361,1.76868e+07,1.76862e+07,ns,,,,,
+"BM_Protogen_Arena",2361,1.77391e+07,1.77387e+07,ns,,,,,
+"BM_Protogen_Arena",2361,1.77298e+07,1.77292e+07,ns,,,,,
+"BM_Protogen_Arena",2361,1.77405e+07,1.77398e+07,ns,,,,,
+"BM_Protogen_Arena_mean",5,1.77271e+07,1.77266e+07,ns,,,,,
+"BM_Protogen_Arena_median",5,1.77391e+07,1.77387e+07,ns,,,,,
+"BM_Protogen_Arena_stddev",5,22940.3,22970.1,ns,,,,,
+"BM_Protogen_Arena_cv",5,258815,259160,ns,,,,,
