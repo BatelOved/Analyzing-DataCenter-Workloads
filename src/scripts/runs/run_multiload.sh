@@ -7,7 +7,7 @@ PROG=$HOME/Analyzing-DataCenter-Workloads/multichase/run_multiload.sh
 # Array of arguments to pass
 ARGS=()
 
-ARGS+=(2) # run_test_type (Loaded Latency)
+ARGS+=(1) # run_test_type (Memory Bandwidth)
 ARGS+=(5) # iterations
 
 cd $HOME/Analyzing-DataCenter-Workloads/multichase
