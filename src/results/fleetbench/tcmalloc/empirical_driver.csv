@@ -1,12 +1,3 @@
-2023-10-21T17:52:34+00:00
-Running /home/ubuntu/.cache/bazel/_bazel_ubuntu/4c29c784cc3db22f3c97f81d231b656c/execroot/com_google_fleetbench/bazel-out/k8-opt-clang/bin/fleetbench/tcmalloc/empirical_driver.runfiles/com_google_fleetbench/fleetbench/tcmalloc/empirical_driver
-Run on (32 X 3105.91 MHz CPU s)
-CPU Caches:
-  L1 Data 32 KiB (x16)
-  L1 Instruction 32 KiB (x16)
-  L2 Unified 1024 KiB (x16)
-  L3 Unified 36608 KiB (x1)
-Load Average: 1.00, 1.00, 1.00
 name,iterations,real_time,cpu_time,time_unit,bytes_per_second,items_per_second,label,error_occurred,error_message,"AllocatedBytes","BytesPerAllocation","RateAllocations","RateBytes","SpaceReleased","WasteCentral","WasteLocal","WastePageheap","WasteTotal"
 "BM_Tcmalloc_5/min_warmup_time:0.500/real_time/threads:1",6894140,6026.91,6026.72,ns,,,,,,7.4247e+08,566,9.09458e+06,5.1549e+09,1.57286e+08,2.16232e+07,1.86544e+07,1.99893e+08,2.40171e+08
 "BM_Tcmalloc_5/min_warmup_time:0.500/real_time/threads:1",6894140,6005.18,6005.01,ns,,,,,,7.42839e+08,566,9.12749e+06,5.17356e+09,1.57286e+08,2.16325e+07,1.79973e+07,2.00172e+08,2.39801e+08

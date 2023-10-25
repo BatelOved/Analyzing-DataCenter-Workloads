@@ -9,4 +9,3 @@ From Analyzing-DataCenter-Workloads repo: `run_fleetbench`
 - `Machine disk size (gp2):` 8 GB
 - `Region:` us-west-1b
 - `Run iterations:` 5
-
