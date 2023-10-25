@@ -4,11 +4,7 @@
 
 `TODO` - Add explaination about the benchmark flags I used, etc. sysbench_threads_count/run_threads, explain how they work. and and in general about qps and what we expect, and the client-server relationship.
 
-### QPS per Thread Count
-
-`TODO` - To emphasize why does this analysis important.
-
-#### The Experimental Constants -
+### The Experimental Constants -
 
 `TODO` - In the experimant there are multiple of factors that can influence the results, therefore this is how we took care of that:
 - `Database Machine Type:` The Intel and ARM families of processors are very close to having the same parameters, +names+parameters.
@@ -17,7 +13,7 @@
 - `Disk Size:` Both the DB and client disk size where tentatively chosen and are constant at all time. But worth checking the influence of that parameter as well.
 - `Iterations:` We would much rather to have larger number of iterations to conclued from but the scope of the experiment is limited and takes long time to produce the results currently.
 
-#### AWS Configurations -
+### AWS Configurations -
 
 - `Database machine - Intel (2/4/8/16/32 VCPU):` db.m5.large/db.m5.xlarge/db.m5.2xlarge/db.m5.4xlarge/db.m5.8xlarge
 - `Database machine - ARM (2/4/8/16/32 VCPU):` db.m6g.large/db.m6g.xlarge/db.m6g.2xlarge/db.m6g.4xlarge/db.m6g.8xlarge
@@ -28,17 +24,21 @@
 - `Run iterations:` 5
 - `Sysbench run threads:` 1,2,4,8,16,32,64,128,256,512
 
-#### Analysis -
+### Analysis -
+
+#### QPS per Thread Count and Architecture
+
+`TODO` - To emphasize why does this analysis important.
 
 - **Intel Architecture Results:**
 
-![Alt Text](utils/sysbench/intel_qps.png "Intel QPS per Thread Count")
+![Alt Text](utils/sysbench/intel_qps_per_thread_count.png "Intel QPS per Thread Count")
 
 `TODO` - Add explaination about that the more the thread count increases also the qps until the increase becomes smaller and smaller. And also processors with more cores/vCPU produce higher qps. And to talk about the ratios. Also to add theoretical reasons for that so later we could examine them. And to think why it makes sense.
 
 - **ARM Architecture Results:**
 
-![Alt text](utils/sysbench/arm_qps.png "ARM QPS per Thread Count")
+![Alt text](utils/sysbench/arm_qps_per_thread_count.png "ARM QPS per Thread Count")
 
 `TODO` - The same.
 
@@ -46,7 +46,7 @@
 
 `TODO` - Add line of the theoretical line of multiplying the qps for multiplyied number of threads.  
 
-![Alt text](utils/sysbench/intel&arm_qps.png "Intel and ARM QPS per Thread Count")
+![Alt text](utils/sysbench/intel&arm_qps_per_thread_count.png "Intel and ARM QPS per Thread Count")
 
 We've observed an intriguing trend where there isn't a significant difference in results among various manufacturers. Nevertheless, Intel appears to have a slight advantage when dealing with a small to medium number of threads. However, as the thread count increases, this advantage diminishes to the point where ARM overtakes Intel in performance for each pair of processors with the same vCPU count. 
 
