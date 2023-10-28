@@ -17,53 +17,53 @@ Analyzing the latency and bandwidth effects of the machines we employed is cruci
 
 #### Multichase: Memory Read Latency by Byte/Thread and Architecture
 
-![Alt text](utils/multiload/multichase/memory_read_latency_by_byte_per_thread.png "Memory Read Latency by Byte per Thread and Architecture")
-
 In this benchmark the Multichase "simple" test is running, in which a single thread with variable amount of bytes compute, and measured is the average of ChaseNS (Multichase nano seconds <=> latency) out of 5 iterations.
 
+![Alt text](utils/multiload/multichase/memory_read_latency_by_byte_per_thread.png "Memory Read Latency by Byte per Thread and Architecture")
+
+`TODO` - Add explaination.
 
 #### Multichase: Memory BW by Byte/Thread and Architecture
 
+In this benchmark the Multichase "simple" test is running, in which a single thread with variable amount of bytes compute, and measured is the average of ChaseMibs (Multichase mebibytes per second <=> memory bandwidth) out of 5 iterations.
+
 ![Alt text](utils/multiload/multichase/memory_bw_by_byte_per_thread.png "Memory BW by Byte per Thread and Architecture")
 
-In this benchmark the Multichase "simple" test is running, in which a single thread with variable amount of bytes compute, and measured is the average of ChaseMibs (Multichase mebibytes per second <=> memory bandwidth) out of 5 iterations.
+`TODO` - Add explaination.
 
 #### Multiload: Memory BW by Load Threads and Architecture
 
-***memcpy-libc:***
+`TODO` - Add explaination.
 
+- **memcpy-libc:**
 1:1 rd:wr ratio - glibc memcpy()
 
 ![Alt text](utils/multiload/memory_bandwidth/memcpy-libc.png "Memory BW by Load Threads and Architecture")
 
 `TODO` - Add explaination.
 
-***memset-libc:***
-
+- **memset-libc:**
 0:1 rd:wr ratio - glibc memset() non-zero data
 
 ![Alt text](utils/multiload/memory_bandwidth/memset-libc.png "Memory BW by Load Threads and Architecture")
 
 `TODO` - Add explaination.
 
-***memsetz-libc:***
-
+- **memsetz-libc:**
 0:1 rd:wr ratio - glibc memset() zero data
 
 ![Alt text](utils/multiload/memory_bandwidth/memsetz-libc.png "Memory BW by Load Threads and Architecture")
 
 `TODO` - Add explaination.
 
-***stream-sum:***
-
-1:0 rd:wr ratio - lmbench stream sum instructions: a[i]+=1   (actual binary depends on compiler & -O level)
+- **stream-sum:**
+1:0 rd:wr ratio - lmbench stream sum instructions: a[i]+=1 (actual binary depends on compiler & -O level)
 
 ![Alt text](utils/multiload/memory_bandwidth/stream-sum.png "Memory BW by Load Threads and Architecture")
 
 `TODO` - Add explaination.
 
-***stream-triad:***
-
+- **stream-triad:**
 2:1 rd:wr ratio - lmbench stream triad instructions: a[i]=b[i]+(scalar*c[i])
 
 ![Alt text](utils/multiload/memory_bandwidth/stream-triad.png "Memory BW by Load Threads and Architecture")

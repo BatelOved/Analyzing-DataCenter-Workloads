@@ -15,3 +15,10 @@ Github Page: https://bateloved.github.io/Analyzing-DataCenter-Workloads/
 
 - Clone: `git clone --recurse-submodules https://github.com/BatelOved/Analyzing-DataCenter-Workloads.git`
 - Install Requirements: `source Analyzing-DataCenter-Workloads/src/scripts/setups/setup.sh`
+
+## Running
+
+From Analyzing-DataCenter-Workloads repo:
+- `run_pkb`
+- `run_multiload`
+- `run_fleetbench`
