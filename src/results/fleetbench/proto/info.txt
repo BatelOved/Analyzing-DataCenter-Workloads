@@ -7,3 +7,13 @@ CPU Caches:
   L2 Unified 1024 KiB (x16)
   L3 Unified 36608 KiB (x1)
 Load Average: 0.99, 1.00, 1.00
+
+2023-10-28T16:55:28+00:00
+Running /home/ubuntu/.cache/bazel/_bazel_ubuntu/4c29c784cc3db22f3c97f81d231b656c/execroot/com_google_fleetbench/bazel-out/aarch64-opt-clang/bin/fleetbench/proto/proto_benchmark.runfiles/com_google_fleetbench/fleetbench/proto/proto_benchmark
+Run on (32 X 243.75 MHz CPU s)
+CPU Caches:
+  L1 Data 64 KiB (x32)
+  L1 Instruction 64 KiB (x32)
+  L2 Unified 1024 KiB (x32)
+  L3 Unified 32768 KiB (x1)
+Load Average: 3.11, 2.50, 1.25

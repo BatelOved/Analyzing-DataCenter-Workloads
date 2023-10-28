@@ -8,3 +8,12 @@ Intel,mean,BM_Protogen_Arena_mean,5,1.77E+07,1.77E+07,ns,,,,,
 Intel,median,BM_Protogen_Arena_median,5,1.77E+07,1.77E+07,ns,,,,,
 Intel,stddev,BM_Protogen_Arena_stddev,5,22940.3,22970.1,ns,,,,,
 Intel,cv,BM_Protogen_Arena_cv,5,258815,259160,ns,,,,,
+ARM,1,BM_Protogen_Arena,1884,2.24E+07,2.24E+07,ns
+ARM,2,BM_Protogen_Arena,1884,2.26E+07,2.26E+07,ns
+ARM,3,BM_Protogen_Arena,1884,2.27E+07,2.27E+07,ns
+ARM,4,BM_Protogen_Arena,1884,2.27E+07,2.27E+07,ns
+ARM,5,BM_Protogen_Arena,1884,2.26E+07,2.26E+07,ns
+ARM,mean,BM_Protogen_Arena_mean,5,2.26E+07,2.26E+07,ns
+ARM,median,BM_Protogen_Arena_median,5,2.26E+07,2.26E+07,ns
+ARM,stddev,BM_Protogen_Arena_stddev,5,127375,127321,ns
+ARM,cv,BM_Protogen_Arena_cv,5,1.13E+06,1.13E+06,ns

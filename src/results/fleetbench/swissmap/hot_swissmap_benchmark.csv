@@ -8,3 +8,12 @@ Intel,mean,"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0_me
 Intel,median,"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0_median",5,4.58473,4.58462,ns,,,,,
 Intel,stddev,"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0_stddev",5,0.000784375,0.000788164,ns,,,,,
 Intel,cv,"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0_cv",5,34214.2,34380,ns,,,,,
+ARM,1,"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0",1006694400,4.59014,4.59009,ns
+ARM,2,"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0",1006694400,4.58527,4.58519,ns
+ARM,3,"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0",1006694400,4.58743,4.5874,ns
+ARM,4,"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0",1006694400,4.58506,4.58495,ns
+ARM,5,"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0",1006694400,4.58879,4.58876,ns
+ARM,mean,"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0_mean",5,4.58734,4.58728,ns
+ARM,median,"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0_median",5,4.58743,4.5874,ns
+ARM,stddev,"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0_stddev",5,0.0022065,0.00223077,ns
+ARM,cv,"BM_InsertHit_Hot<::absl::flat_hash_set, 64>/set_size:64/density:0_cv",5,96199.4,97259.2,ns

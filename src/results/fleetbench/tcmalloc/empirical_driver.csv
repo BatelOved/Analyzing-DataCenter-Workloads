@@ -8,3 +8,12 @@ Intel,mean,BM_Tcmalloc_5/min_warmup_time:0.500/real_time/threads:1_mean,5,6018.4
 Intel,median,BM_Tcmalloc_5/min_warmup_time:0.500/real_time/threads:1_median,5,6019.82,6019.67,ns,,,,,,7.43E+08,566,9.11E+06,5.16E+09,1.57E+08,2.16E+07,1.84E+07,2.02E+08,2.42E+08
 Intel,stddev,BM_Tcmalloc_5/min_warmup_time:0.500/real_time/threads:1_stddev,5,8.90389,8.90391,ns,,,,,,140997,0,13483.7,7.64E+06,0,5802.11,494173,1.32E+06,1.18E+06
 Intel,cv,BM_Tcmalloc_5/min_warmup_time:0.500/real_time/threads:1_cv,5,295886,295895,ns,,,,,,0.000189861,0,0.00148052,0.00148052,0,0.000268241,0.0270897,0.0065772,0.00488399
+ARM,1,BM_Tcmalloc_5/min_warmup_time:0.500/real_time/threads:1,5945254,6989.35,6989.24,ns,,,,,,7.40E+08,566,7.85E+06,4.45E+09,1.76E+08,2.19E+07,1.97E+07,2.04E+08,2.45E+08
+ARM,2,BM_Tcmalloc_5/min_warmup_time:0.500/real_time/threads:1,5945254,7006.38,7006.23,ns,,,,,,7.40E+08,566,7.83E+06,4.44E+09,1.76E+08,2.20E+07,2.00E+07,2.03E+08,2.45E+08
+ARM,3,BM_Tcmalloc_5/min_warmup_time:0.500/real_time/threads:1,5945254,6996.59,6996.43,ns,,,,,,7.40E+08,566,7.84E+06,4.44E+09,1.76E+08,2.20E+07,1.99E+07,2.03E+08,2.45E+08
+ARM,4,BM_Tcmalloc_5/min_warmup_time:0.500/real_time/threads:1,5945254,6962.85,6962.72,ns,,,,,,7.40E+08,566,7.88E+06,4.46E+09,1.76E+08,2.20E+07,1.97E+07,2.03E+08,2.45E+08
+ARM,5,BM_Tcmalloc_5/min_warmup_time:0.500/real_time/threads:1,5945254,6963.53,6963.33,ns,,,,,,7.40E+08,566,7.88E+06,4.46E+09,1.76E+08,2.20E+07,1.90E+07,2.06E+08,2.47E+08
+ARM,mean,BM_Tcmalloc_5/min_warmup_time:0.500/real_time/threads:1_mean,5,6983.74,6983.59,ns,,,,,,7.40E+08,566,7.86E+06,4.45E+09,1.76E+08,2.20E+07,1.97E+07,2.04E+08,2.46E+08
+ARM,median,BM_Tcmalloc_5/min_warmup_time:0.500/real_time/threads:1_median,5,6989.35,6989.24,ns,,,,,,7.40E+08,566,7.85E+06,4.45E+09,1.76E+08,2.20E+07,1.97E+07,2.03E+08,2.45E+08
+ARM,stddev,BM_Tcmalloc_5/min_warmup_time:0.500/real_time/threads:1_stddev,5,19.7111,19.7169,ns,,,,,,93437.6,0,22187.6,1.26E+07,0,20509.4,403649,1.25E+06,866052
+ARM,cv,BM_Tcmalloc_5/min_warmup_time:0.500/real_time/threads:1_cv,5,564487,564662,ns,,,,,,0.000126332,0,0.00282334,0.00282334,0,0.000934075,0.0205055,0.00614745,0.00352717

@@ -57,11 +57,19 @@ sudo apt-get install numactl
 
 # Fleetbench Utilities:
 sudo apt install apt-transport-https curl gnupg -y
+sudo apt-get install clang llvm lld
+
+# Bazel Intel download -
 curl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor >bazel-archive-keyring.gpg
 sudo mv bazel-archive-keyring.gpg /usr/share/keyrings
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/bazel-archive-keyring.gpg] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
 sudo apt update && sudo apt install bazel
-sudo apt-get install clang llvm lld
+
+# Bazel ARM download -
+# BAZEL_LATEST_VERSION=$(curl -s https://api.github.com/repos/bazelbuild/bazel/releases/latest | grep tag_name | cut -d '"' -f 4)
+# wget https://github.com/bazelbuild/bazel/releases/download/$BAZEL_LATEST_VERSION/bazel-$BAZEL_LATEST_VERSION-linux-arm64
+# chmod +x bazel-$BAZEL_LATEST_VERSION-linux-arm64
+# sudo mv bazel-$BAZEL_LATEST_VERSION-linux-arm64 /usr/local/bin/bazel
 
 
 wait
