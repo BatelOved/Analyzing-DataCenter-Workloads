@@ -54,6 +54,9 @@ Another noteworthy detail is that processors with more power, i.e., a higher cor
 
 It's essential to highlight that the way measurements are configured has a significant impact on the outcomes. This includes factors such as the timing of the measurements, the sizes of the chosen disks, the geographical region of the server, and more. Consequently, it's advisable to interpret these results with a degree of caution. Anyone interested in this study can replicate the experiments, generate graphs, make comparisons, or reach out to me directly for additional information.
 
+![Alt text](utils/sysbench/qps_per_num_vcpu_per_thread_count1.png "QPS per Number of vCPU per Thread Count")
+![Alt text](utils/sysbench/qps_per_num_vcpu_per_thread_count2.png "QPS per Number of vCPU per Thread Count")
+
 Looking ahead, our future plans involve investigating how these parameters influence the results and presenting a performance-to-cost index.
 
 #### Theoretical Questions -

@@ -25,7 +25,8 @@ In this benchmark the Multichase "simple" test is running, in which a single thr
 
 #### Multichase: Memory BW by Byte/Thread and Architecture
 
-In this benchmark the Multichase "simple" test is running, in which a single thread with variable amount of bytes compute, and measured is the average of ChaseMibs (Multichase mebibytes per second <=> memory bandwidth) out of 5 iterations.
+In this benchmark the Multichase "simple" test is running, in which a single thread with variable amount of bytes compute, and measured is the average of ChaseMibs (Multichase mebibytes per second <=> memory bandwidth) out of 5 iterations.\
+Whereas ChasMibs is computed from ChasNS: `ChasMibs = nr_chase_threads * (sizeof(void *) / (ChasNS / 1000000000.0) / (1024 * 1024));`
 
 ![Alt text](utils/multiload/multichase/memory_bw_by_byte_per_thread.png "Memory BW by Byte per Thread and Architecture")
 
@@ -34,6 +35,8 @@ In this benchmark the Multichase "simple" test is running, in which a single thr
 #### Multiload: Memory BW by Load Threads and Architecture
 
 `TODO` - Add explaination.
+
+The results are for Byte/Thread = 1,073,741,824.
 
 - **memcpy-libc:**
 1:1 rd:wr ratio - glibc memcpy()
@@ -57,7 +60,7 @@ In this benchmark the Multichase "simple" test is running, in which a single thr
 `TODO` - Add explaination.
 
 - **stream-sum:**
-1:0 rd:wr ratio - lmbench stream sum instructions: a[i]+=1 (actual binary depends on compiler & -O level)
+1:0 rd:wr ratio - lmbench stream sum instructions: s+=a[i] (actual binary depends on compiler & -O level)
 
 ![Alt text](utils/multiload/memory_bandwidth/stream-sum.png "Memory BW by Load Threads and Architecture")
 

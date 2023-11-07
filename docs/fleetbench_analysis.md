@@ -28,7 +28,7 @@ Covers [Snappy](https://github.com/google/snappy), [ZSTD](https://facebook.githu
 
 Supports algorithms: [CRC32](https://github.com/abseil/abseil-cpp/tree/master/absl/crc), [absl::Hash](https://github.com/abseil/abseil-cpp/tree/master/absl/hash).
 
-![Alt text](utils/fleetbench/hashing.png "Bythes per second by Name and Architecture")
+![Alt text](utils/fleetbench/hashing.png "Bytes per second by Name and Architecture")
 
 `TODO` - Add explaination.
 
@@ -36,7 +36,7 @@ Supports algorithms: [CRC32](https://github.com/abseil/abseil-cpp/tree/master/ab
 
 Supports libc algorithms: Memcpy, Memmove, Memcmp, Bcmp, Memset.
 
-![Alt text](utils/fleetbench/mem.png "Bythes per second by Name and Architecture")
+![Alt text](utils/fleetbench/mem.png "Bytes per second by Name and Architecture")
 
 `TODO` - Add explaination.
 

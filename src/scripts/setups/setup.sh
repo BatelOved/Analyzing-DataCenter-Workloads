@@ -33,13 +33,14 @@ git config --global alias.logg "log --all --decorate --graph --oneline"
 
 # Python Env & pip:
 echo -e "\n${purple}${PROJECT_NAME}: Python Env & pip Installation...\n${reset}"
-sudo apt-get update
-sudo apt-get install -y python3-venv
+sudo apt-get update && sudo apt-get install -y python3-venv
 /usr/bin/python3 -m venv $HOME/my_virtualenv
 pip install --upgrade pip
 
 echo -e "\n${purple}${PROJECT_NAME}: Running setup_env.sh...\n${reset}"
 source $HOME/Analyzing-DataCenter-Workloads/src/scripts/setups/setup_env.sh
+
+sudo apt-get install -y apt-transport-https curl gnupg
 
 # PerfKitBenchmarker Requirements:
 echo -e "\n${purple}${PROJECT_NAME}: PerfKitBenchmarker Requirements Installation...\n${reset}"
@@ -51,19 +52,28 @@ pip3 install -r $HOME/Analyzing-DataCenter-Workloads/PerfKitBenchmarker/perfkitb
 
 # Multichase Utilities:
 echo -e "\n${purple}${PROJECT_NAME}: Multichase Utilities Installation...\n${reset}"
-sudo apt-get install make
-sudo apt-get install gcc
-sudo apt-get install numactl
+sudo apt-get install -y make gcc numactl
 
 # Fleetbench Utilities:
-sudo apt install apt-transport-https curl gnupg -y
-sudo apt-get install clang llvm lld
+echo -e "\n${purple}${PROJECT_NAME}: Fleetbench Utilities Installation...\n${reset}"
+# Clang compiler download -
+# sudo apt-get install -y clang llvm lld
+
+# Intel icc compiler download -
+# download the key to system keyring
+wget -O- https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB \
+| gpg --dearmor | sudo tee /usr/share/keyrings/oneapi-archive-keyring.gpg > /dev/null
+
+# add signed entry to apt sources and configure the APT client to use Intel repository:
+echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" | sudo tee /etc/apt/sources.list.d/oneAPI.list
+
+sudo apt-get update && sudo apt-get install -y intel-basekit
 
 # Bazel Intel download -
 curl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor >bazel-archive-keyring.gpg
 sudo mv bazel-archive-keyring.gpg /usr/share/keyrings
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/bazel-archive-keyring.gpg] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
-sudo apt update && sudo apt install bazel
+sudo apt-get update && sudo apt-get install -y bazel
 
 # Bazel ARM download -
 # BAZEL_LATEST_VERSION=$(curl -s https://api.github.com/repos/bazelbuild/bazel/releases/latest | grep tag_name | cut -d '"' -f 4)
@@ -71,7 +81,5 @@ sudo apt update && sudo apt install bazel
 # chmod +x bazel-$BAZEL_LATEST_VERSION-linux-arm64
 # sudo mv bazel-$BAZEL_LATEST_VERSION-linux-arm64 /usr/local/bin/bazel
 
-
-wait
 
 echo -e "\n${purple}${PROJECT_NAME}: Setup End\n${reset}"

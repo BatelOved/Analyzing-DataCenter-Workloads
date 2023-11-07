@@ -7,6 +7,9 @@ PROG="bazel"
 # Array of arguments to pass
 PROG_ARGS=(run --config=clang --config=opt)
 
+# . /opt/intel/oneapi/setvars.sh
+# PROG_ARGS=(run --config=icx --config=opt)
+
 TESTS=()
 # TESTS+=(fleetbench/compression:compression_benchmark)
 TESTS+=(fleetbench/swissmap:hot_swissmap_benchmark)
