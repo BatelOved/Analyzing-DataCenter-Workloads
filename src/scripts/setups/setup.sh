@@ -56,18 +56,19 @@ sudo apt-get install -y make gcc numactl
 
 # Fleetbench Utilities:
 echo -e "\n${purple}${PROJECT_NAME}: Fleetbench Utilities Installation...\n${reset}"
+
 # Clang compiler download -
-# sudo apt-get install -y clang llvm lld
+sudo apt-get install -y clang llvm lld
 
 # Intel icc compiler download -
 # download the key to system keyring
-wget -O- https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB \
-| gpg --dearmor | sudo tee /usr/share/keyrings/oneapi-archive-keyring.gpg > /dev/null
+# wget -O- https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB \
+# | gpg --dearmor | sudo tee /usr/share/keyrings/oneapi-archive-keyring.gpg > /dev/null
 
-# add signed entry to apt sources and configure the APT client to use Intel repository:
-echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" | sudo tee /etc/apt/sources.list.d/oneAPI.list
+# # add signed entry to apt sources and configure the APT client to use Intel repository:
+# echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" | sudo tee /etc/apt/sources.list.d/oneAPI.list
 
-sudo apt-get update && sudo apt-get install -y intel-basekit
+# sudo apt-get update && sudo apt-get install -y intel-basekit
 
 # Bazel Intel download -
 curl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor >bazel-archive-keyring.gpg
