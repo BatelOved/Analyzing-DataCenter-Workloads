@@ -28,7 +28,7 @@
 
 #### QPS per Thread Count and Architecture
 
-`TODO` - To emphasize why does this analysis important.
+`TODO` - To emphasize why does this analysis important, and that the sysbench_testname is oltp_read_write.
 
 - **Intel Architecture Results:**
 

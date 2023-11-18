@@ -15,8 +15,30 @@ The increasing popularity of cloud computing has introduced a new dimension to d
 
 In this work, we delve into the analysis of data-center workloads, examining the current architectures, exploring performance metrics and benchmarks, and considering the impact of cloud providers on data-center operations.
 
+## AWS EC2 Comparison: M5 vs. M6g -
+In this work we compared between the M5 and M6g [EC2 instance types](https://aws.amazon.com/ec2/instance-types/).
+
+- <ins>M5 Features:</ins>\
+Up to 3.1 GHz Intel Xeon Scalable processor (Skylake 8175M or Cascade Lake 8259CL) with new Intel Advanced Vector Extension (AVX-512) instruction set.\
+Memory channels (total): 6\
+Supported memory: DDR4-2666/DDR4-2933 (2666/2933 Date Rate (MT/s) accordingly)
+
+- <ins>M6g Features:</ins>\
+Custom built AWS Graviton2 Processor with 64-bit Arm Neoverse cores.\
+Memory channels (total): 8\
+Supported memory: DDR4-3200 (3200 Date Rate (MT/s))
+
+<ins>The maximum theoretical bandwidth is expected to be as follows:</ins>\
+DDR4 memory modules transfer data on a bus that is 8 bytes (64 data bits) wide.\
+Each DDR4 peak transfer rate calculated as follows: `Date Rate (MT/s) * Bus Width (B/T)`.\
+In order to get to the theoretical memory BW the peak transfer rate should also be multiplied by the number of memory channels.\
+Hence, the maximum theoretical bandwidth of M6g is 204.8 GB/s, whereas M5 expected to reach 127.9 GB/s and 140.7 GB/s for DDR4-2666 and DDR4-2933 accordingly.
+
+More information about Graviton2 can be found [here](https://pages.awscloud.com/rs/112-TZM-766/images/2020_0501-CMP_Slide-Deck.pdf) and [here](https://github.com/aws/aws-graviton-getting-started).\
+And more information about Intel Xeon can be found [here](https://www.cpu-world.com/CPUs/Xeon/Intel-Xeon%208175M.html) and [here](https://www.cpu-world.com/CPUs/Xeon/Intel-Xeon%208259CL.html).
+
 > [Next](./benchmarks.md)
 
-## Contact
+### Contact
 
 `Email:` _bateloved1@gmail.com_
