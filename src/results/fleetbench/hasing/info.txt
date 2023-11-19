@@ -1,14 +1,14 @@
-2023-10-21T17:56:15+00:00
+2023-11-18T22:00:17+00:00
 Running /home/ubuntu/.cache/bazel/_bazel_ubuntu/4c29c784cc3db22f3c97f81d231b656c/execroot/com_google_fleetbench/bazel-out/k8-opt-clang/bin/fleetbench/hashing/hashing_benchmark.runfiles/com_google_fleetbench/fleetbench/hashing/hashing_benchmark
-Run on (32 X 3101.36 MHz CPU s)
+Run on (32 X 3102 MHz CPU s)
 CPU Caches:
   L1 Data 32 KiB (x16)
   L1 Instruction 32 KiB (x16)
   L2 Unified 1024 KiB (x16)
   L3 Unified 36608 KiB (x1)
-Load Average: 1.00, 1.00, 1.00
+Load Average: 1.00, 1.84, 1.69
 
-2023-10-28T17:03:15+00:00
+2023-11-18T21:19:03+00:00
 Running /home/ubuntu/.cache/bazel/_bazel_ubuntu/4c29c784cc3db22f3c97f81d231b656c/execroot/com_google_fleetbench/bazel-out/aarch64-opt-clang/bin/fleetbench/hashing/hashing_benchmark.runfiles/com_google_fleetbench/fleetbench/hashing/hashing_benchmark
 Run on (32 X 243.75 MHz CPU s)
 CPU Caches:
@@ -16,4 +16,4 @@ CPU Caches:
   L1 Instruction 64 KiB (x32)
   L2 Unified 1024 KiB (x32)
   L3 Unified 32768 KiB (x1)
-Load Average: 1.00, 1.31, 1.14
+Load Average: 1.00, 1.77, 1.57

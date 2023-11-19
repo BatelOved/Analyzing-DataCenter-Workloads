@@ -1,14 +1,14 @@
-2023-10-21T18:10:13+00:00
+2023-11-18T22:00:52+00:00
 Running /home/ubuntu/.cache/bazel/_bazel_ubuntu/4c29c784cc3db22f3c97f81d231b656c/execroot/com_google_fleetbench/bazel-out/k8-opt-clang/bin/fleetbench/libc/mem_benchmark.runfiles/com_google_fleetbench/fleetbench/libc/mem_benchmark
-Run on (32 X 3105.63 MHz CPU s)
+Run on (32 X 3088.88 MHz CPU s)
 CPU Caches:
   L1 Data 32 KiB (x16)
   L1 Instruction 32 KiB (x16)
   L2 Unified 1024 KiB (x16)
   L3 Unified 36608 KiB (x1)
-Load Average: 1.00, 1.00, 1.00
+Load Average: 1.00, 1.75, 1.66
 
-2023-10-28T17:20:36+00:00
+2023-11-18T21:19:56+00:00
 Running /home/ubuntu/.cache/bazel/_bazel_ubuntu/4c29c784cc3db22f3c97f81d231b656c/execroot/com_google_fleetbench/bazel-out/aarch64-opt-clang/bin/fleetbench/libc/mem_benchmark.runfiles/com_google_fleetbench/fleetbench/libc/mem_benchmark
 Run on (32 X 243.75 MHz CPU s)
 CPU Caches:
@@ -16,4 +16,4 @@ CPU Caches:
   L1 Instruction 64 KiB (x32)
   L2 Unified 1024 KiB (x32)
   L3 Unified 32768 KiB (x1)
-Load Average: 1.01, 1.00, 1.02
+Load Average: 1.53, 1.75, 1.57
