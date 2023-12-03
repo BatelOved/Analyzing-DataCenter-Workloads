@@ -7,3 +7,6 @@
 [submodule "fleetbench"]
 	path = fleetbench
 	url = https://github.com/google/fleetbench
+[submodule "stream"]
+	path = stream
+	url = https://github.com/intel/memory-bandwidth-benchmarks
