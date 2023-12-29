@@ -1,5 +1,9 @@
 #!/bin/bash
 
+
+source $HOME/Analyzing-DataCenter-Workloads/src/scripts/setups/setup_utils.sh
+setup_fleetbench
+
 # Run fleetbench
 cd "$HOME/Analyzing-DataCenter-Workloads/fleetbench"
 PROG="bazel"

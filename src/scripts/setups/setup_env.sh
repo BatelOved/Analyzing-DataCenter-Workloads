@@ -1,30 +1,19 @@
 #!/bin/bash
 
-
-# Python Env & pip:
-source $HOME/my_virtualenv/bin/activate
-export CLOUDSDK_PYTHON=$HOME/my_virtualenv/bin/python
-
-# Multichase Utilities:
-export CC=gcc
-
 # Env's:
-export RUNS='/tmp/perfkitbenchmarker/runs'
-export SRC=${HOME}/Analyzing-DataCenter-Workloads/src
+export WA=${HOME}/Analyzing-DataCenter-Workloads
+export SRC=${WA}/src
+export RESULTS=${SRC}/results
 export SCRIPTS=${SRC}/scripts
-export CNFGS=${SCRIPTS}/configs
 
 # Alias:
-alias cdr="cd $RUNS"
+alias cdw="cd $WA"
 alias cds="cd $SRC"
-alias cdc="cd $CNFGS"
-alias lt="ls -lt"
-alias clean="rm -rf $RUNS/*"
+alias cdr="cd $RESULTS"
+alias cdsc="cd $SCRIPTS"
+
 alias run_pkb="bash $SCRIPTS/runs/run_pkb.sh"
 alias run_multiload="bash $SCRIPTS/runs/run_multiload.sh"
 alias run_fleetbench="bash $SCRIPTS/runs/run_fleetbench.sh"
+alias run_stream="bash $SCRIPTS/runs/run_stream.sh"
 alias clean_aws="bash $SCRIPTS/clean_aws/clean_aws.sh"
-alias dl="rm -rf perfkitbenchmarker_keyfile* ssh* sysbench*"
-
-# AWS Configure:
-echo "SET YOUR AWS CREDENTIALS BEFORE RUNNING! (using aws configure command or env variables)"

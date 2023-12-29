@@ -1,8 +1,10 @@
 # Copyright (C) 2021 Intel Corporation
 # SPDX-License-Identifier: BSD-3-Clause
 
-CC  = icx
+ICC = icx
 GCC = gcc
+
+BASE_DIR = $(WA)/stream
 
 # STREAM options:
 # -DNTIMES control the number of times each stream kernel is executed
@@ -36,35 +38,35 @@ else
 COMMON_COPTS += -qopt-streaming-stores always
 endif
 
-AVX_OBJS    = stream_avx.o
-AVX2_OBJS   = stream_avx2.o
-AVX512_OBJS = stream_avx512.o
-GEN_OBJS    = stream.o
+AVX_OBJS    = $(BASE_DIR)/stream_avx.o
+AVX2_OBJS   = $(BASE_DIR)/stream_avx2.o
+AVX512_OBJS = $(BASE_DIR)/stream_avx512.o
+GEN_OBJS    = $(BASE_DIR)/stream.o
 
 ifdef cpu
-all: stream_$(cpu).bin
+all: $(BASE_DIR)/stream_$(cpu).bin
 else
-all: stream_avx.bin stream_avx2.bin stream_avx512.bin stream.bin
+all: $(BASE_DIR)/stream_avx.bin $(BASE_DIR)/stream_avx2.bin $(BASE_DIR)/stream_avx512.bin $(BASE_DIR)/stream.bin
 endif
 
-SRC = stream.c
+SRC = $(BASE_DIR)/stream.c
 
-stream_avx.o: $(SRC)
-	$(CC) $(COMMON_COPTS) $(AVX_COPTS) $(STREAM_CPP_OPTS) -c $(SRC) -o $@
-stream_avx2.o: $(SRC)
-	$(CC) $(COMMON_COPTS) $(AVX2_COPTS) $(STREAM_CPP_OPTS) -c $(SRC) -o $@
-stream_avx512.o: $(SRC)
-	$(CC) $(COMMON_COPTS) $(AVX512_COPTS) $(STREAM_CPP_OPTS) -c $(SRC) -o $@
-stream.o: $(SRC)
+$(BASE_DIR)/stream_avx.o: $(SRC)
+	$(ICC) $(COMMON_COPTS) $(AVX_COPTS) $(STREAM_CPP_OPTS) -c $(SRC) -o $@
+$(BASE_DIR)/stream_avx2.o: $(SRC)
+	$(ICC) $(COMMON_COPTS) $(AVX2_COPTS) $(STREAM_CPP_OPTS) -c $(SRC) -o $@
+$(BASE_DIR)/stream_avx512.o: $(SRC)
+	$(ICC) $(COMMON_COPTS) $(AVX512_COPTS) $(STREAM_CPP_OPTS) -c $(SRC) -o $@
+$(BASE_DIR)/stream.o: $(SRC)
 	$(GCC) $(GEN_COPTS) $(STREAM_CPP_OPTS) -c $(SRC) -o $@
 
-stream_avx.bin: $(AVX_OBJS)
-	$(CC) $(COMMON_COPTS) $(AVX_COPTS) $^ -o $@
-stream_avx2.bin: $(AVX2_OBJS)
-	$(CC) $(COMMON_COPTS) $(AVX2_COPTS) $^ -o $@
-stream_avx512.bin: $(AVX512_OBJS)
-	$(CC) $(COMMON_COPTS) $(AVX512_COPTS) $^ -o $@
-stream.bin: $(GEN_OBJS)
+$(BASE_DIR)/stream_avx.bin: $(AVX_OBJS)
+	$(ICC) $(COMMON_COPTS) $(AVX_COPTS) $^ -o $@
+$(BASE_DIR)/stream_avx2.bin: $(AVX2_OBJS)
+	$(ICC) $(COMMON_COPTS) $(AVX2_COPTS) $^ -o $@
+$(BASE_DIR)/stream_avx512.bin: $(AVX512_OBJS)
+	$(ICC) $(COMMON_COPTS) $(AVX512_COPTS) $^ -o $@
+$(BASE_DIR)/stream.bin: $(GEN_OBJS)
 	$(GCC) $(GEN_COPTS) $^ -o $@
 
 
@@ -88,6 +90,6 @@ help:
 	@echo -e "\tmake size=67108864 cpu=avx512"
 
 clean:
-	rm -rf *.o *.bin 
+	rm -rf $(BASE_DIR)/*.o $(BASE_DIR)/*.bin 
 
 .PHONY: all clean help

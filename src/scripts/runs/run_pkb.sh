@@ -1,6 +1,9 @@
 #!/bin/bash
 
 
+source $HOME/Analyzing-DataCenter-Workloads/src/scripts/setups/setup_utils.sh
+setup_pkb
+
 # Run PerfKitBenchmarker
 PROG=$HOME/Analyzing-DataCenter-Workloads/PerfKitBenchmarker/pkb.py
 CNFG=$HOME/Analyzing-DataCenter-Workloads/src/scripts/configs/config.yaml

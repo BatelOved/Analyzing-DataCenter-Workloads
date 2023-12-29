@@ -3,8 +3,6 @@
 # Copyright (C) 2021 Intel Corporation
 # SPDX-License-Identifier: BSD-3-Clause
 
-CC=gcc #icx
-
 function mach_info()
 {
    num_socks=$(lscpu | grep "Socket(s):" | awk '{print $NF}')
@@ -141,18 +139,18 @@ function show_mach_info()
 function check_binary()
 {
   if [ "${target_cpu}" == "avx512f" ]; then
-     binary=stream_avx512.bin
+     binary=$WA/stream/stream_avx512.bin
   elif [ "${target_cpu}" == "avx2" ]; then
-     binary=stream_avx2.bin
+     binary=$WA/stream/stream_avx2.bin
   elif [ "${target_cpu}" == "avx" ]; then
-     binary=stream_avx.bin
+     binary=$WA/stream/stream_avx.bin
   else
      echo "Unknown ISA, aborting.."
      exit 1
   fi
 
   if [ "${CC}" == "gcc" ]; then
-     binary=stream.bin
+     binary=$WA/stream/stream.bin
   fi
 
   if [ ! -f ${binary} ]; then
@@ -210,7 +208,7 @@ function bench_simple()
     echo "Running ${binary} with ${t} threads in compact affinity, output log will be saved in ${res_dir}/${res_file}"
 
     cat $$-runinfo.log > ${res_dir}/${res_file}
-    ./${binary} &>> ${res_dir}/${res_file}
+    ${binary} &>> ${res_dir}/${res_file}
   done
 
   rm $$-runinfo.log
@@ -246,7 +244,7 @@ function bench_sweep()
          echo "Running ${binary} with ${t} threads in $aff pinning, output log will be saved in ${res_dir}/${res_file}"
 
          cat $$-runinfo.log > ${res_dir}/${res_file}
-         ./${binary} &>> ${res_dir}/${res_file}
+         ${binary} &>> ${res_dir}/${res_file}
        done
 
     elif [ "$aff" == "distribute" ]; then
@@ -266,7 +264,7 @@ function bench_sweep()
         echo "Running ${binary} with ${t} threads in $aff pinning, output log will be saved in ${res_dir}/${res_file}"
         cat $$-runinfo.log > ${res_dir}/${res_file}
         export OMP_NUM_THREADS=$t
-        ./${binary} &>> ${res_dir}/${res_file}
+        ${binary} &>> ${res_dir}/${res_file}
       done
     fi
   done
@@ -298,7 +296,7 @@ function bench_sweep()
       echo "Running ${binary} with ${t} threads from numa-$id, output log will be saved in ${res_dir}/${res_file}"
 
       cat $$-runinfo.log > ${res_dir}/${res_file}
-      numactl -m$id ./${binary} &>> ${res_dir}/${res_file}
+      numactl -m$id ${binary} &>> ${res_dir}/${res_file}
     done
   done
 

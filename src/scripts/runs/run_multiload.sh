@@ -1,8 +1,13 @@
 #!/bin/bash
 
 
+source $HOME/Analyzing-DataCenter-Workloads/src/scripts/setups/setup_utils.sh
+setup_multichase
+
 # Run multiload
 PROG=$HOME/Analyzing-DataCenter-Workloads/multichase/run_multiload.sh
+
+export CC=gcc
 
 # Array of arguments to pass
 ARGS=()

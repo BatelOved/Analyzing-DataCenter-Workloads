@@ -7,6 +7,7 @@ docs                    | Github page files
 PerfKitBenchmarker      | Submodule with PerfKitBenchmarker benchmarks
 multichase              | Submodule with multichase benchmarks
 fleetbench              | Submodule with fleetbench benchmarks
+stream                  | Submodule with stream benchmarks
 src                     | Scripts and results for the benchmarks
 
 Github Page: https://bateloved.github.io/Analyzing-DataCenter-Workloads/
@@ -22,3 +23,4 @@ From Analyzing-DataCenter-Workloads repo:
 - `run_pkb`
 - `run_multiload`
 - `run_fleetbench`
+- `run_stream`
