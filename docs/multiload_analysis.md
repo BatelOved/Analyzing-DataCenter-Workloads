@@ -1,4 +1,4 @@
-## 3.2. Multiload Analysis
+## 3.3. Multiload Analysis
 
 Multichase - a pointer chaser benchmark.\
 Multiload - a superset of multichase which runs latency, memory bandwidth, and loaded-latency.
@@ -74,6 +74,6 @@ The results are for Byte/Thread = 1,073,741,824.
 `TODO` - Add explaination.
 
 
-> [Back](./sysbench_analysis.html)
+> [Back](./sysbench_analysis.md)
 
 > [Next](./fleetbench_analysis.md)

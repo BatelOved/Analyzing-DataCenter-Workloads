@@ -1,6 +1,4 @@
-# 3. Analysis
-
-## 3.1. Sysbench Analysis
+## 3.2. Sysbench Analysis
 
 `TODO` - Add explaination about the benchmark flags I used, etc. sysbench_threads_count/run_threads, explain how they work. and and in general about qps and what we expect, and the client-server relationship.
 
@@ -69,6 +67,6 @@ Looking ahead, our future plans involve investigating how these parameters influ
 - What is the influence of the network to it?
 - What if we ran this experiment on a different cloud provider, or even locally?
 
-> [Back](./benchmarks.html)
+> [Back](./stream_analysis.md)
 
 > [Next](./multiload_analysis.md)
