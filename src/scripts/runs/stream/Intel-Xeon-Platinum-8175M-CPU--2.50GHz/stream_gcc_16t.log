@@ -1,0 +1,77 @@
+
+CPU Model =  Intel(R) Xeon(R) Platinum 8175M CPU @ 2.50GHz
+
+Sockets/Cores/Threads:
+	num_sockets          = 1
+	num_cores_total      = 16
+	num_cores_per_socket = 16
+	num_threads_per_core = 2
+	Hyper-Threading      = true
+
+NUMA:
+	num_numa_domains            = 1
+	num_numa_domains_per_socket = 1
+	num_cores_per_numa_domain   = 16
+
+Memory:
+	mem_vendor           = Specified
+	mem_speed            =  2666 MT/s
+	mem_type             = DDR4
+	mem_size_total       = 128 GB
+	mem_size_per_dimm    =  128 GB
+	num_mem_channels     = 1
+	peak_mem_bw_system   = 21.32 GB/sec
+	peak_mem_bw_per_sock = 21.32 GB/sec
+
+CPU Caches:
+	L1_cache = 32K (8-way)
+	L2_cache = 1024K (16-way)
+	L3_cache = 33792K (11-way)
+	L3_cache_per_sock = 16896 KB
+	L3_cache_per_core = 1056 KB
+
+OS:
+Operating System       = Ubuntu 22.04.3 LTS
+Kernel version         = 6.2.0-1017-aws
+CPU Turbo Boost        = 
+CPU Scaling Governor   = 
+CPU Scaling Driver     = 
+Transparent Huge Pages = disabled
+
+CC version  = gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+Hostname    = ip-172-31-13-40.us-west-1.compute.internal
+Date        = Sat Dec 30 15:30:06 UTC 2023
+
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 134217728 (elements), Offset = 0 (elements)
+Memory per array = 1024.0 MiB (= 1.0 GiB).
+Total memory required = 3072.0 MiB (= 3.0 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 16
+Number of Threads counted = 16
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 22737 microseconds.
+   (= 22737 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           67224.4     0.032249     0.031945     0.032842
+Scale:          67035.8     0.032383     0.032035     0.033344
+Add:            75473.8     0.043084     0.042680     0.044509
+Triad:          75411.9     0.043096     0.042715     0.044115
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------

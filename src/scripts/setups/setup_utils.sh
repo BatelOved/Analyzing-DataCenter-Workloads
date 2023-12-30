@@ -104,6 +104,10 @@ function setup_general_install() {
     setup_gitAlias
     setup_pythonEnv
     setup_envVar
+
+    # Only once
+    # echo 'source /home/ubuntu/Analyzing-DataCenter-Workloads/src/scripts/setups/setup_utils.sh' >> ~/.bashrc
+    # echo 'source /home/ubuntu/Analyzing-DataCenter-Workloads/src/scripts/setups/setup_env.sh' >> ~/.bashrc
 }
 
 ##################################################################################################
@@ -138,4 +142,10 @@ function setup_fleetbench() {
         chmod +x bazel-$BAZEL_LATEST_VERSION-linux-arm64
         sudo mv bazel-$BAZEL_LATEST_VERSION-linux-arm64 /usr/local/bin/bazel
     fi
+}
+
+function setup_stream() {
+    echo $(setup_echo "Stream Requirements")
+
+    source /opt/intel/oneapi/setvars.sh
 }

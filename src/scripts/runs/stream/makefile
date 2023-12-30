@@ -24,17 +24,11 @@ STREAM_CPP_OPTS  += -DSTREAM_ARRAY_SIZE=$(STREAM_ARRAY_SIZE)
 # Intel Compiler options to control the generated ISA
 AVX512_COPTS   = -xCORE-AVX512 -qopt-zmm-usage=high
 
-CFLAGS = -Wall -O3 -mcmodel=medium -Ofast -mavx2
-CFLAGS += -Drfo=1
+CFLAGS = -Wall -O3 -mcmodel=medium -Ofast -mavx2 -fno-builtin
 
-ICC_FLAGS = -qopenmp -shared-intel -no-alias-args
-GCC_FLAGS = -fopenmp -fargument-noalias
-
-ifdef rfo
-CFLAGS += -qopt-streaming-stores never -fno-builtin
-else
-CFLAGS += -qopt-streaming-stores always
-endif
+GCC_FLAGS = -fopenmp
+ICC_FLAGS = -qopenmp -shared-intel 
+#-qopt-streaming-stores never
 
 AVX512_OBJS = $(BASE_DIR)/stream_avx512.o
 GEN_OBJS    = $(BASE_DIR)/stream.o
@@ -52,22 +46,6 @@ $(BASE_DIR)/stream_avx512.bin: $(AVX512_OBJS)
 	$(ICC) $(CFLAGS) $(ICC_FLAGS) $(AVX512_COPTS) $^ -o $@
 $(BASE_DIR)/stream.bin: $(GEN_OBJS)
 	$(GCC) $(CFLAGS) $(GCC_FLAGS) $^ -o $@
-
-
-help:
-	@echo -e "Running 'make' with no options would compile the STREAM benchmark with $(STREAM_ARRAY_SIZE) FP64 elements per array for following Intel CPU's:\n"
-	@echo -e "\tstream_avx512.bin     => Targeted for Intel CPU's that support AVX512 ISA"
-	@echo -e "\nThe following options are supported:"
-	@echo -e "\tsize=<number_of_elements_per_array>"
-	@echo ""
-	@echo -e "\trfo=1 forces to use regular cached stores instead of non-temporal stores"
-	@echo ""
-	@echo -e "\nFew examples:"
-	@echo -e "To compile STREAM benchmark only for Intel AVX512 CPU's, do:"
-	@echo -e "\tmake cpu=avx512"
-	@echo ""
-	@echo -e "To compile STREAM benchmark for Intel AVX512 CPU's with each buffer containing 67108864 elements, do:"
-	@echo -e "\tmake size=67108864 cpu=avx512"
 
 clean:
 	rm -rf $(BASE_DIR)/*.o $(BASE_DIR)/*.bin 

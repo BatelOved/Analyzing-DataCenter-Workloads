@@ -2,19 +2,19 @@
 
 
 source $HOME/Analyzing-DataCenter-Workloads/src/scripts/setups/setup_utils.sh
+setup_stream
 
 # Run Stream
 PROG=$SCRIPTS/runs/stream/run.sh
 
 cd $SCRIPTS/runs/stream
 
-export CC=gcc
-
 if [ $(setup_pkgExists gcc) -eq 1 ]; then
     make $WA/stream/stream.bin
 fi
-if [ $(setup_pkgExists icx) -eq 1 ]; then
-    make $WA/stream/stream_avx.bin $WA/stream/stream_avx2.bin $WA/stream/stream_avx512.bin
+if [ $(setup_pkgExists intel-basekit) -eq 1 ]; then
+    make $WA/stream/stream_avx512.bin
 fi
 
-source "${PROG}"
+sudo "${PROG}" "gcc"
+#sudo "${PROG}" "icx"

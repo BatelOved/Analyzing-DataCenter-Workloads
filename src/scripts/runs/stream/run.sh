@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Copyright (C) 2021 Intel Corporation
-# SPDX-License-Identifier: BSD-3-Clause
+source /opt/intel/oneapi/setvars.sh
+CC=$1
+BASE_DIR="/home/ubuntu/Analyzing-DataCenter-Workloads/stream/"
 
 function mach_info()
 {
@@ -73,15 +74,6 @@ function mach_info()
    if [ -z "${lscpu_flags}" ]; then
      lscpu_flags=$(cat /proc/cpuinfo | grep -m1 "flags[[:space:]]*:")
    fi
-   
-   for isa in avx512f avx2 avx
-   do
-       echo ${lscpu_flags} | grep -w ${isa} &> /dev/null
-        if [ $? -eq 0 ]; then
-          target_cpu=${isa}
-          break
-         fi
-   done
 }
 
 function show_mach_info()
@@ -129,8 +121,7 @@ function show_mach_info()
   echo -e "Transparent Huge Pages = $thp"
 
   echo ""
-  echo "CC version = ${cc_version}"
-  echo "Target ISA  = ${target_cpu}"
+  echo "CC version  = ${cc_version}"
   echo "Hostname    = $(hostname -f)"
   echo "Date        = $(date)"
   echo ""
@@ -138,19 +129,13 @@ function show_mach_info()
 
 function check_binary()
 {
-  if [ "${target_cpu}" == "avx512f" ]; then
-     binary=$WA/stream/stream_avx512.bin
-  elif [ "${target_cpu}" == "avx2" ]; then
-     binary=$WA/stream/stream_avx2.bin
-  elif [ "${target_cpu}" == "avx" ]; then
-     binary=$WA/stream/stream_avx.bin
-  else
-     echo "Unknown ISA, aborting.."
-     exit 1
-  fi
-
   if [ "${CC}" == "gcc" ]; then
-     binary=$WA/stream/stream.bin
+     binary=$BASE_DIR/stream.bin
+  elif [ "${CC}" == "icx" ]; then
+     binary=$BASE_DIR/stream_avx512.bin
+  else
+     echo "Unknown, aborting.."
+     exit 1
   fi
 
   if [ ! -f ${binary} ]; then
@@ -158,14 +143,14 @@ function check_binary()
      exit 1
   fi
 
-  objdump -D ${binary} | grep vmovntpd &> /dev/null
-  if [ $? -eq 0 ]; then
-     nt_stores_status=exist
-     stype=nt
-  else
-     nt_stores_status="does-not-exist"
-     stype=rfo
-  fi
+  # objdump -D ${binary} | grep vmovntpd &> /dev/null
+  # if [ $? -eq 0 ]; then
+  #    nt_stores_status=exist
+  #    stype=nt
+  # else
+  #    nt_stores_status="does-not-exist"
+  #    stype=rfo
+  # fi
 
   # objdump -D ${binary} | grep memcpy &> /dev/null
   # if [ $? -eq 0 ]; then
@@ -302,7 +287,6 @@ function bench_sweep()
 
   rm $$-runinfo.log
 }
-
 
 mach_info
 show_mach_info 2>&1 | tee $$-runinfo.log
