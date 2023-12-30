@@ -24,7 +24,7 @@ STREAM_CPP_OPTS  += -DSTREAM_ARRAY_SIZE=$(STREAM_ARRAY_SIZE)
 # Intel Compiler options to control the generated ISA
 AVX512_COPTS   = -xCORE-AVX512 -qopt-zmm-usage=high
 
-CFLAGS = -Wall -O3 -mcmodel=medium -Ofast -mavx2 -fno-builtin
+CFLAGS = -Wall -O3 -Ofast -fno-builtin
 
 GCC_FLAGS = -fopenmp
 ICC_FLAGS = -qopenmp -shared-intel 

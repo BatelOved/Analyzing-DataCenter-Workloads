@@ -1,8 +1,11 @@
 #!/bin/bash
 
-source /opt/intel/oneapi/setvars.sh
 CC=$1
 BASE_DIR="/home/ubuntu/Analyzing-DataCenter-Workloads/stream/"
+
+if [ "$CC" == "icx" ]; then
+  source /opt/intel/oneapi/setvars.sh
+fi
 
 function mach_info()
 {

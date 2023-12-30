@@ -2,7 +2,6 @@
 
 
 source $HOME/Analyzing-DataCenter-Workloads/src/scripts/setups/setup_utils.sh
-setup_stream
 
 # Run Stream
 PROG=$SCRIPTS/runs/stream/run.sh
@@ -13,6 +12,7 @@ if [ $(setup_pkgExists gcc) -eq 1 ]; then
     make $WA/stream/stream.bin
 fi
 if [ $(setup_pkgExists intel-basekit) -eq 1 ]; then
+    setup_stream
     make $WA/stream/stream_avx512.bin
 fi
 
