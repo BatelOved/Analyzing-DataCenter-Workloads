@@ -125,7 +125,6 @@ function setup_multichase() {
     echo $(setup_echo "Multichase Requirements")
 
     sudo apt-get install -y make gcc numactl
-    export CC=gcc
 }
 
 function setup_fleetbench() {

@@ -1,0 +1,27 @@
+gcc -std=gnu99 -g -O3 -fomit-frame-pointer -fno-unroll-loops -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow -Wmissing-declarations -Wnested-externs -Wpointer-arith -W -Wno-unused-parameter -Werror -pthread -Wno-tautological-compare   -c -o multichase.o multichase.c
+gcc -std=gnu99 -g -O3 -fomit-frame-pointer -fno-unroll-loops -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow -Wmissing-declarations -Wnested-externs -Wpointer-arith -W -Wno-unused-parameter -Werror -pthread -Wno-tautological-compare   -c -o permutation.o permutation.c
+gcc -std=gnu99 -g -O3 -fomit-frame-pointer -fno-unroll-loops -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow -Wmissing-declarations -Wnested-externs -Wpointer-arith -W -Wno-unused-parameter -Werror -pthread -Wno-tautological-compare   -c -o arena.o arena.c
+gcc -std=gnu99 -g -O3 -fomit-frame-pointer -fno-unroll-loops -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow -Wmissing-declarations -Wnested-externs -Wpointer-arith -W -Wno-unused-parameter -Werror -pthread -Wno-tautological-compare   -c -o br_asm.o br_asm.c
+gcc -std=gnu99 -g -O3 -fomit-frame-pointer -fno-unroll-loops -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow -Wmissing-declarations -Wnested-externs -Wpointer-arith -W -Wno-unused-parameter -Werror -pthread -Wno-tautological-compare   -c -o util.o util.c
+gcc -g -O3 -static -pthread  multichase.o permutation.o arena.o br_asm.o util.o  -lrt -lm -o multichase
+gcc -std=gnu99 -g -O3 -fomit-frame-pointer -fno-unroll-loops -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow -Wmissing-declarations -Wnested-externs -Wpointer-arith -W -Wno-unused-parameter -Werror -pthread -Wno-tautological-compare   -c -o multiload.o multiload.c
+gcc -g -O3 -static -pthread  multiload.o permutation.o arena.o util.o  -lrt -lm -o multiload
+gcc -std=gnu99 -g -O3 -fomit-frame-pointer -fno-unroll-loops -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow -Wmissing-declarations -Wnested-externs -Wpointer-arith -W -Wno-unused-parameter -Werror -pthread -Wno-tautological-compare   -c -o fairness.o fairness.c
+gcc -g -O3 -static -pthread  fairness.o  -lrt -lm -lm -o fairness
+gcc -std=gnu99 -g -O3 -fomit-frame-pointer -fno-unroll-loops -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow -Wmissing-declarations -Wnested-externs -Wpointer-arith -W -Wno-unused-parameter -Werror -pthread -Wno-tautological-compare   -c -o pingpong.o pingpong.c
+gcc -g -O3 -static -pthread  pingpong.o  -lrt -lm -o pingpong
+
+
+
+clang -Wno-ignored-optimization-argument -Wno-error=backend-plugin -faligned-allocation -fnew-alignment=8 -funsigned-char -fno-strict-aliasing -fno-omit-frame-pointer -O3 -momit-leaf-frame-pointer   -c -o multichase.o multichase.c
+clang -Wno-ignored-optimization-argument -Wno-error=backend-plugin -faligned-allocation -fnew-alignment=8 -funsigned-char -fno-strict-aliasing -fno-omit-frame-pointer -O3 -momit-leaf-frame-pointer   -c -o permutation.o permutation.c
+clang -Wno-ignored-optimization-argument -Wno-error=backend-plugin -faligned-allocation -fnew-alignment=8 -funsigned-char -fno-strict-aliasing -fno-omit-frame-pointer -O3 -momit-leaf-frame-pointer   -c -o arena.o arena.c
+clang -Wno-ignored-optimization-argument -Wno-error=backend-plugin -faligned-allocation -fnew-alignment=8 -funsigned-char -fno-strict-aliasing -fno-omit-frame-pointer -O3 -momit-leaf-frame-pointer   -c -o br_asm.o br_asm.c
+clang -Wno-ignored-optimization-argument -Wno-error=backend-plugin -faligned-allocation -fnew-alignment=8 -funsigned-char -fno-strict-aliasing -fno-omit-frame-pointer -O3 -momit-leaf-frame-pointer   -c -o util.o util.c
+clang -g -O3 -static -pthread  multichase.o permutation.o arena.o br_asm.o util.o  -lrt -lm -o multichase
+clang -Wno-ignored-optimization-argument -Wno-error=backend-plugin -faligned-allocation -fnew-alignment=8 -funsigned-char -fno-strict-aliasing -fno-omit-frame-pointer -O3 -momit-leaf-frame-pointer   -c -o multiload.o multiload.c
+clang -g -O3 -static -pthread  multiload.o permutation.o arena.o util.o  -lrt -lm -o multiload
+clang -Wno-ignored-optimization-argument -Wno-error=backend-plugin -faligned-allocation -fnew-alignment=8 -funsigned-char -fno-strict-aliasing -fno-omit-frame-pointer -O3 -momit-leaf-frame-pointer   -c -o fairness.o fairness.c
+clang -g -O3 -static -pthread  fairness.o  -lrt -lm -lm -o fairness
+clang -Wno-ignored-optimization-argument -Wno-error=backend-plugin -faligned-allocation -fnew-alignment=8 -funsigned-char -fno-strict-aliasing -fno-omit-frame-pointer -O3 -momit-leaf-frame-pointer   -c -o pingpong.o pingpong.c
+clang -g -O3 -static -pthread  pingpong.o  -lrt -lm -o pingpong
