@@ -1,0 +1,49 @@
+2024-01-02T21:03:51+00:00
+Running /home/ubuntu/.cache/bazel/_bazel_ubuntu/4c29c784cc3db22f3c97f81d231b656c/execroot/_main/bazel-out/aarch64-opt-clang/bin/fleetbench/libc/mem_benchmark.runfiles/_main/fleetbench/libc/mem_benchmark
+Run on (32 X 243.75 MHz CPU s)
+CPU Caches:
+  L1 Data 64 KiB (x32)
+  L1 Instruction 64 KiB (x32)
+  L2 Unified 1024 KiB (x32)
+  L3 Unified 32768 KiB (x1)
+Load Average: 1.58, 1.94, 1.14
+
+2024-01-02T21:06:29+00:00
+Running /home/ubuntu/.cache/bazel/_bazel_ubuntu/4c29c784cc3db22f3c97f81d231b656c/execroot/_main/bazel-out/aarch64-opt-gcc/bin/fleetbench/libc/mem_benchmark.runfiles/_main/fleetbench/libc/mem_benchmark
+Run on (32 X 243.75 MHz CPU s)
+CPU Caches:
+  L1 Data 64 KiB (x32)
+  L1 Instruction 64 KiB (x32)
+  L2 Unified 1024 KiB (x32)
+  L3 Unified 32768 KiB (x1)
+Load Average: 1.76, 1.79, 1.19
+
+2024-01-02T21:24:55+00:00
+Running /home/ubuntu/.cache/bazel/_bazel_ubuntu/4c29c784cc3db22f3c97f81d231b656c/execroot/_main/bazel-out/k8-opt-clang/bin/fleetbench/libc/mem_benchmark.runfiles/_main/fleetbench/libc/mem_benchmark
+Run on (32 X 3107.78 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x16)
+  L1 Instruction 32 KiB (x16)
+  L2 Unified 1024 KiB (x16)
+  L3 Unified 36608 KiB (x1)
+Load Average: 1.15, 1.03, 0.61
+
+2024-01-02T21:29:15+00:00
+Running /home/ubuntu/.cache/bazel/_bazel_ubuntu/4c29c784cc3db22f3c97f81d231b656c/execroot/_main/bazel-out/k8-opt-gcc/bin/fleetbench/libc/mem_benchmark.runfiles/_main/fleetbench/libc/mem_benchmark
+Run on (32 X 3100.7 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x16)
+  L1 Instruction 32 KiB (x16)
+  L2 Unified 1024 KiB (x16)
+  L3 Unified 36608 KiB (x1)
+Load Average: 0.75, 1.17, 0.78
+
+2024-01-02T21:32:47+00:00
+Running /home/ubuntu/.cache/bazel/_bazel_ubuntu/4c29c784cc3db22f3c97f81d231b656c/execroot/_main/bazel-out/k8-opt-icx/bin/fleetbench/libc/mem_benchmark.runfiles/_main/fleetbench/libc/mem_benchmark
+Run on (32 X 3090.02 MHz CPU s)
+CPU Caches:
+  L1 Data 32 KiB (x16)
+  L1 Instruction 32 KiB (x16)
+  L2 Unified 1024 KiB (x16)
+  L3 Unified 36608 KiB (x1)
+Load Average: 1.28, 1.29, 0.90
