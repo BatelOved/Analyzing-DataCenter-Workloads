@@ -9,9 +9,9 @@ cd "$HOME/Analyzing-DataCenter-Workloads/fleetbench"
 PROG="bazel"
 
 # Array of arguments to pass
-PROG_ARGS=(run --config=clang --config=opt)
-#PROG_ARGS=(run --config=gcc --config=opt)
-#PROG_ARGS=(run --config=icx --config=opt)
+PROG_ARGS=(run --custom_malloc="@bazel_tools//tools/cpp:malloc" --config=clang --config=opt)
+#PROG_ARGS=(run --custom_malloc="@bazel_tools//tools/cpp:malloc" --config=gcc --config=opt)
+#PROG_ARGS=(run --custom_malloc="@bazel_tools//tools/cpp:malloc" --config=icx --config=opt)
 
 TESTS=()
 # TESTS+=(fleetbench/compression:compression_benchmark)
@@ -37,7 +37,7 @@ for test in ${TESTS[@]}; do
     echo ""
 
     BENCHMARK_ARGS+=(--benchmark_out="$SRC/results/$test.csv")
-    "${PROG}" "${PROG_ARGS[@]}" --verbose_failures "$test" "${BENCHMARK_ARGS[@]}"
+    "${PROG}" "${PROG_ARGS[@]}" "$test" "${BENCHMARK_ARGS[@]}"
     echo "============================================================================================================="
 done
 

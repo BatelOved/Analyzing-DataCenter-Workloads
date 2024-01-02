@@ -145,6 +145,10 @@ function setup_fleetbench() {
             sudo mv bazel-$BAZEL_LATEST_VERSION-linux-arm64 /usr/local/bin/bazel
         fi
     fi
+
+    if [ $(setup_pkgExists g++) -eq 0 ]; then
+        sudo apt-get install g++
+    fi
 }
 
 function setup_stream() {
