@@ -1,4 +1,4 @@
-## 3.3. Multiload Analysis
+## 3.2. Multiload Analysis
 
 Multichase - a pointer chaser benchmark.\
 Multiload - a superset of multichase which runs latency, memory bandwidth, and loaded-latency.
@@ -21,20 +21,7 @@ In this benchmark the Multichase "simple" test is running, in which a single thr
 
 ![Alt text](utils/multiload/multichase/memory_read_latency_by_byte_per_thread.png "Memory Read Latency by Byte per Thread and Architecture")
 
-`TODO` - Add explaination.
-
-#### Multichase: Memory BW by Byte/Thread and Architecture
-
-In this benchmark the Multichase "simple" test is running, in which a single thread with variable amount of bytes compute, and measured is the average of ChaseMibs (Multichase mebibytes per second <=> memory bandwidth) out of 5 iterations.\
-Whereas ChasMibs is computed from ChasNS: `ChasMibs = nr_chase_threads * (sizeof(void *) / (ChasNS / 1000000000.0) / (1024 * 1024));`
-
-![Alt text](utils/multiload/multichase/memory_bw_by_byte_per_thread.png "Memory BW by Byte per Thread and Architecture")
-
-`TODO` - Add explaination.
-
 #### Multiload: Memory BW by Load Threads and Architecture
-
-`TODO` - Add explaination.
 
 The results are for Byte/Thread = 1,073,741,824.
 
@@ -43,37 +30,27 @@ The results are for Byte/Thread = 1,073,741,824.
 
 ![Alt text](utils/multiload/memory_bandwidth/memcpy-libc.png "Memory BW by Load Threads and Architecture")
 
-`TODO` - Add explaination.
-
 - **memset-libc:**
 0:1 rd:wr ratio - glibc memset() non-zero data
 
 ![Alt text](utils/multiload/memory_bandwidth/memset-libc.png "Memory BW by Load Threads and Architecture")
-
-`TODO` - Add explaination.
 
 - **memsetz-libc:**
 0:1 rd:wr ratio - glibc memset() zero data
 
 ![Alt text](utils/multiload/memory_bandwidth/memsetz-libc.png "Memory BW by Load Threads and Architecture")
 
-`TODO` - Add explaination.
-
 - **stream-sum:**
 1:0 rd:wr ratio - lmbench stream sum instructions: s+=a[i] (actual binary depends on compiler & -O level)
 
 ![Alt text](utils/multiload/memory_bandwidth/stream-sum.png "Memory BW by Load Threads and Architecture")
-
-`TODO` - Add explaination.
 
 - **stream-triad:**
 2:1 rd:wr ratio - lmbench stream triad instructions: a[i]=b[i]+(scalar*c[i])
 
 ![Alt text](utils/multiload/memory_bandwidth/stream-triad.png "Memory BW by Load Threads and Architecture")
 
-`TODO` - Add explaination.
 
+> [Back](./stream_analysis.md)
 
-> [Back](./sysbench_analysis.md)
-
-> [Next](./fleetbench_analysis.md)
+> [Next](./sysbench_analysis.md)

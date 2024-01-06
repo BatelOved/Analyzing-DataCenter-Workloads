@@ -1,15 +1,10 @@
-## 3.2. Sysbench Analysis
+## 3.3. Sysbench Analysis
 
-`TODO` - Add explaination about the benchmark flags I used, etc. sysbench_threads_count/run_threads, explain how they work. and and in general about qps and what we expect, and the client-server relationship.
+Sysbench OLTP (Online Transaction Processing) benchmark is a popular tool used to evaluate the performance of database systems by simulating a workload typical of an OLTP application. OLTP systems are designed to handle a large number of short, fast transactions, such as those encountered in a banking or e-commerce application.
 
-### The Experimental Constants -
+The threads flag in Sysbench allows you to specify the number of threads that will be used to execute the OLTP benchmark. Threads are independent sequences of instructions that can be scheduled to run by the operating system. In the context of Sysbench OLTP benchmark, each thread simulates a separate client connection to the database server.
 
-`TODO` - In the experimant there are multiple of factors that can influence the results, therefore this is how we took care of that:
-- `Database Machine Type:` The Intel and ARM families of processors are very close to having the same parameters, +names+parameters.
-- `Networking:` In order to avoide variations caused by network between multiple different clients and servers from different architectures we chose to have the clients and the database machines at the same AWS region, and specifically also at the same availability zone.
-- `Client Machine Type:`In the experiment we are interested in the DB machine preformance, therefore the client is a strong 32 vCPU client, tentitively chosen to be of Intel architecture, but need to also check with ARM 32 vCPU client machine for both as well.
-- `Disk Size:` Both the DB and client disk size where tentatively chosen and are constant at all time. But worth checking the influence of that parameter as well.
-- `Iterations:` We would much rather to have larger number of iterations to conclued from but the scope of the experiment is limited and takes long time to produce the results currently.
+![Alt text](utils/sysbench/cient_server.png)
 
 ### AWS Configurations -
 
@@ -26,23 +21,15 @@
 
 #### QPS per Thread Count and Architecture
 
-`TODO` - To emphasize why does this analysis important, and that the sysbench_testname is oltp_read_write.
-
 - **Intel Architecture Results:**
 
 ![Alt Text](utils/sysbench/intel_qps_per_thread_count.png "Intel QPS per Thread Count")
-
-`TODO` - Add explaination about that the more the thread count increases also the qps until the increase becomes smaller and smaller. And also processors with more cores/vCPU produce higher qps. And to talk about the ratios. Also to add theoretical reasons for that so later we could examine them. And to think why it makes sense.
 
 - **ARM Architecture Results:**
 
 ![Alt text](utils/sysbench/arm_qps_per_thread_count.png "ARM QPS per Thread Count")
 
-`TODO` - The same.
-
 - **Comparison:**
-
-`TODO` - Add line of the theoretical line of multiplying the qps for multiplyied number of threads.  
 
 ![Alt text](utils/sysbench/intel&arm_qps_per_thread_count.png "Intel and ARM QPS per Thread Count")
 
@@ -52,21 +39,6 @@ Another noteworthy detail is that processors with more power, i.e., a higher cor
 
 It's essential to highlight that the way measurements are configured has a significant impact on the outcomes. This includes factors such as the timing of the measurements, the sizes of the chosen disks, the geographical region of the server, and more. Consequently, it's advisable to interpret these results with a degree of caution. Anyone interested in this study can replicate the experiments, generate graphs, make comparisons, or reach out to me directly for additional information.
 
-![Alt text](utils/sysbench/qps_per_num_vcpu_per_thread_count1.png "QPS per Number of vCPU per Thread Count")
-![Alt text](utils/sysbench/qps_per_num_vcpu_per_thread_count2.png "QPS per Number of vCPU per Thread Count")
+> [Back](./multiload_analysis.md)
 
-Looking ahead, our future plans involve investigating how these parameters influence the results and presenting a performance-to-cost index.
-
-#### Theoretical Questions -
-`TODO` - Add
-- What if we worked in another region?
-- What if we had 32 vCPU ARM client?
-- What if we ran more iterations?
-- What if we would have used different disk sizes?
-- What is the influence of the memory BW to it?
-- What is the influence of the network to it?
-- What if we ran this experiment on a different cloud provider, or even locally?
-
-> [Back](./stream_analysis.md)
-
-> [Next](./multiload_analysis.md)
+> [Next](./fleetbench_analysis.md)

@@ -1,32 +1,28 @@
-# 3. Analysis
+## 3.1. STREAM Analysis
 
-## AWS EC2 Comparison: M5 vs. M6g -
-In this work we compared between the M5 and M6g [EC2 instance types](https://aws.amazon.com/ec2/instance-types/).
+The STREAM benchmark consists of four main vector operations, each representing a different memory access pattern. The metrics used in STREAM are Copy, Scale, Add, and Triad.
 
-- <ins>M5 Features:</ins>\
-Up to 3.1 GHz Intel Xeon Scalable processor (Skylake 8175M or Cascade Lake 8259CL) with new Intel Advanced Vector Extension (AVX-512) instruction set.\
-Memory channels (total): 6\
-Supported memory: DDR4-2666/DDR4-2933 (2666/2933 Date Rate (MT/s) accordingly)
+**Copy:**
+* Operation: The Copy operation involves copying the contents of one array to another. It tests the system's ability to read from one memory location and write to another.
+* Formula: `C[i] = A[i]`
+* Description: This operation focuses on testing the memory-to-memory copy performance, representing a scenario where data needs to be duplicated in memory.
 
-- <ins>M6g Features:</ins>\
-Custom built AWS Graviton2 Processor with 64-bit Arm Neoverse cores.\
-Memory channels (total): 8\
-Supported memory: DDR4-3200 (3200 Date Rate (MT/s))
+**Scale:**
+* Operation: The Scale operation involves multiplying each element of an array by a scalar (constant) value and storing the result in another array.
+* Formula: `C[i] = q * A[i]`
+* Description: The Scale operation tests the system's ability to perform scalar multiplication efficiently, where each element in the array is multiplied by the same constant value.
 
-<ins>The maximum theoretical bandwidth is expected to be as follows:</ins>\
-DDR4 memory modules transfer data on a bus that is 8 bytes (64 data bits) wide.\
-Each DDR4 peak transfer rate calculated as follows: `Date Rate (MT/s) * Bus Width (B/T)`.\
-In order to get to the theoretical memory BW the peak transfer rate should also be multiplied by the number of memory channels.\
-Hence, the maximum theoretical bandwidth of M6g is 204.8 GB/s, whereas M5 expected to reach 127.9 GB/s and 140.7 GB/s for DDR4-2666 and DDR4-2933 accordingly.
+**Add:**
+* Operation: The Add operation involves adding the corresponding elements of two arrays and storing the result in a third array.
+* Formula: `C[i] = A[i] + B[i]`
+* Description: This operation tests the memory bandwidth for reading from two arrays, performing additions, and writing the results to a third array. It represents scenarios where data from multiple sources needs to be combined.
 
-More information about Graviton2 can be found [here](https://pages.awscloud.com/rs/112-TZM-766/images/2020_0501-CMP_Slide-Deck.pdf) and [here](https://github.com/aws/aws-graviton-getting-started).\
-And more information about Intel Xeon can be found [here](https://www.cpu-world.com/CPUs/Xeon/Intel-Xeon%208175M.html) and [here](https://www.cpu-world.com/CPUs/Xeon/Intel-Xeon%208259CL.html).
+**Triad:**
+* Operation: The Triad operation combines the concepts of Scale and Add. It multiplies each element of one array by a scalar and then adds the corresponding element of another array, storing the result in a third array.
+* Formula: `C[i] = A[i] + q * B[i]`
+* Description: The Triad operation is particularly interesting because it involves both multiplication and addition, providing a more comprehensive assessment of the system's ability to perform combined arithmetic operations on arrays.
 
-![Alt text](utils/stream/peak_mem_bw_per_core.png)
-
-## 3.1. Stream Analysis
-
-STREAM is a simple, synthetic benchmark designed to measure sustainable memory bandwidth (in MB/s) for four simple vector kernels: Copy, Scale, Add and Triad.
+For each of these operations, the STREAM benchmark measures the achieved memory bandwidth (in MB/s), indicating how efficiently the system can perform the specified vector operations. By running these operations in sequence, the benchmark provides insights into the sustained memory bandwidth across different types of memory access patterns, helping evaluate the overall memory subsystem performance of a computer system.
 
 ### AWS Configurations -
 
@@ -35,25 +31,25 @@ STREAM is a simple, synthetic benchmark designed to measure sustainable memory b
 
 ### Analysis -
 
-#### Stream Memory Bandwidth
+#### STREAM Memory Bandwidth
 
 - **Intel-Xeon-Platinum-8175M Results:**
 
-![Alt Text](utils/stream/intel_icx_ss_16t.png "Stream Memory BW: Intel-Xeon-Platinum-8175M")
+![Alt Text](utils/stream/intel_icx_ss_16t.png "STREAM Memory BW: Intel-Xeon-Platinum-8175M")
 
 As we can see the peak memory bandwidth is ~76% of the theoretical value presented above.
 
 - **ARM Neoverse-N1 Results:**
 
-![Alt text](utils/stream/arm_gcc_32t.png "Stream Memory BW: Neoverse-N1")
+![Alt text](utils/stream/arm_gcc_32t.png "STREAM Memory BW: Neoverse-N1")
 
 As we can see the peak memory bandwidth is ~83% of the theoretical value presented above.
 
 - **Comparison:**
 
 ARM Neoverse-N1 (AWS machine m6g.8xlarge) has 60% improved peak theoretical memory bandwidth compared to Intel-Xeon-Platinum-8175M (AWS machine m5.8xlarge),
-and running the stream benchmark we see Neoverse-N1 can reach even ~74% improvement in peak memory bandwidth in practice.
+and running the STREAM benchmark we see Neoverse-N1 can reach even ~74% improvement in peak memory bandwidth in practice.
 
-> [Back](./benchmarks.md)
+> [Back](./analysis.md)
 
-> [Next](./sysbench_analysis.md)
+> [Next](./multiload_analysis.md)

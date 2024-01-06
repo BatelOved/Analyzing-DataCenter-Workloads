@@ -22,23 +22,17 @@ Covers [Snappy](https://github.com/google/snappy), [ZSTD](https://facebook.githu
 
 `TODO` - Add graph.
 
-`TODO` - Add explaination.
-
 #### Hashing Benchmark
 
 Supports algorithms: [CRC32](https://github.com/abseil/abseil-cpp/tree/master/absl/crc), [absl::Hash](https://github.com/abseil/abseil-cpp/tree/master/absl/hash).
 
 ![Alt text](utils/fleetbench/hashing.png "Bytes per second by Name and Architecture")
 
-`TODO` - Add explaination.
-
 #### Mem Benchmark
 
 Supports libc algorithms: Memcpy, Memmove, Memcmp, Bcmp, Memset.
 
 ![Alt text](utils/fleetbench/mem.png "Bytes per second by Name and Architecture")
-
-`TODO` - Add explaination.
 
 #### Proto Benchmark
 
@@ -47,8 +41,6 @@ Protocol buffers are the most commonly-used data format at Google. They are used
 More information can be found [here](https://protobuf.dev/overview/).
 
 ![Alt text](utils/fleetbench/proto.png "CPU Time by Name and Architecture")
-
-`TODO` - Add explaination.
 
 #### Swissmap Benchmark
 
@@ -63,8 +55,6 @@ More information can be found [here](https://abseil.io/blog/20180927-swisstables
 
 ![Alt text](utils/fleetbench/swissmap-cold.png "CPU Time by Name and Architecture")
 
-`TODO` - Add explaination.
-
 #### Tcmalloc Benchmark
 
 TCMalloc is Google's customized implementation of C's malloc() and C++'s operator new used for memory allocation within our C and C++ code. TCMalloc is a fast, multi-threaded malloc implementation.
@@ -72,9 +62,7 @@ More information can be found [here](https://github.com/google/tcmalloc).
 
 ![Alt text](utils/fleetbench/empirical_driver.png "CPU Time by Name and Architecture")
 
-`TODO` - Add explaination.
 
-
-> [Back](./multiload_analysis.md)
+> [Back](./sysbench_analysis.md)
 
 > [Next](./conclusions.md)
