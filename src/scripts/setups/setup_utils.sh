@@ -104,10 +104,6 @@ function setup_general_install() {
     setup_gitAlias
     setup_pythonEnv
     setup_envVar
-
-    # Only once
-    # echo 'source /home/ubuntu/Analyzing-DataCenter-Workloads/src/scripts/setups/setup_utils.sh' >> ~/.bashrc
-    # echo 'source /home/ubuntu/Analyzing-DataCenter-Workloads/src/scripts/setups/setup_env.sh' >> ~/.bashrc
 }
 
 ##################################################################################################
@@ -148,6 +144,10 @@ function setup_fleetbench() {
 
     if [ $(setup_pkgExists g++) -eq 0 ]; then
         sudo apt-get install g++
+    fi
+
+    if [ $(setup_pkgExists libpfm4) -eq 0 ]; then
+        sudo apt-get install libpfm4-dev
     fi
 }
 

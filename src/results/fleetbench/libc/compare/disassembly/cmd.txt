@@ -1,0 +1,1 @@
+objdump -drCft -j .text -M intel -S mem_benchmark > mem_benchmark.asm
