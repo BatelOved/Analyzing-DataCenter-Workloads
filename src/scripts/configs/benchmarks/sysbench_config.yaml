@@ -3,6 +3,11 @@
 #import src/scripts/configs/intel_client_config.yaml
 #import src/scripts/configs/disk_config.yaml
 
+highMem_client_32_vcpu: &highMem_client_32_vcpu
+    AWS:
+        machine_type: r7g.8xlarge
+        zone: us-west-1b
+
 ##################################################################
 # Benchmark Flags
 ##################################################################
@@ -11,6 +16,12 @@ sysbench_flags: &sysbench_flags
 
 default_vm_groups: &default_vm_groups
     clients:
+        vm_spec: *intel_client_32_vcpu
+        disk_spec: *default_300_gb
+    servers:
+        vm_spec: *intel_client_32_vcpu
+        disk_spec: *default_300_gb
+    replications:
         vm_spec: *intel_client_32_vcpu
         disk_spec: *default_300_gb
 
